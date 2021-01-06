@@ -137,6 +137,7 @@ func main() {
 | version               | insert时默认为1,每次更新自动加1                     |
 | default 0或default(0) | 设置默认值，紧跟的内容如果是varchar等需要加上单引号 |
 | json                  | 表示内容将先转成JSON格式                            |
+
 **数据类型的映射关系:**
 | Go数据类型                                           | xorm中的类型 |
 | ---                                                  | ---          |
