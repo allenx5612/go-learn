@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--表格标签 cellspacing规定单元格之间的距离-->
+<table align="center" border="1" cellpadding="10" cellspacing="0" width="500" height="250">
+    <thead>
+        <!--表头会加粗居中-->
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>刘德华</td>
+            <td>男</td>
+            <td>56</td>
+        </tr>
+        <tr>
+            <!--款行跨列合并-->
+            <td rowspan="2">刘德华</td>
+            <td colspan="2">男</td>
+        </tr>
+        <tr>
+            <td>男</td>
+            <td>56</td>
+        </tr>
+    </tbody>
+</table>
+
+<!--无序列表 ul内部不能摆放其他标签, 其他标签只能在li中-->
+<h4>你喜欢的食物？</h4>
+<ul>
+    <li>榴莲</li>
+    <li>飞鱼罐头</li>
+</ul>
+<!--有序列表-->
+<ol>
+    <li>榴莲</li>
+    <li>飞鱼罐头</li>
+</ol>
+<!--自定义列表 dt定义项目名，dl详细解释说明项目-->
+<dl>
+    <dt>关注我们</dt>
+    <dd>新浪微博</dd>
+    <dd>官方微信</dd>
+    <dd>联系我们</dd>
+</dl>
+
+</body>
+</html>
