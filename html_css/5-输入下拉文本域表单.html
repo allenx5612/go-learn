@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--表单标签, 组成表单域，表单控件，提示信息-->
+<!--表单域, action服务程序的url地址，method提交方式get或post，name名称-->
+<form action="demo.php" method="get" name="name1">
+    <!--input属性name， value, checked, maxlength-->
+    <div>
+        <!--label标签可直接引导光标到输入-->
+        <label for="user">用户名:</label>
+        <input type="text" maxlength="10" name="user" id="user" placeholder="请输入用户名">
+    </div>
+    <div>
+        <label for="pws">密码： </label>
+        <input type="password" name="pws" id="pws">
+    </div>
+    <!--要实现多选一，必须有相同的name属性, value后台提交数据使用-->
+    <div>
+        性别：
+        <input type="radio" name="sex" id="male" value="男" checked>
+        <label for="male">男</label>
+        <input type="radio" name="sex" id="female" value="女">
+        <label for="female">女</label>
+    </div>
+    <div>
+        爱好：
+        <input type="checkbox" name="hobby" id="eat" value="吃饭">
+        <label for="eat">吃饭</label>
+        <input type="checkbox" name="hobby" id="sleep" value="睡觉">
+        <label for="sleep">睡觉</label>
+    </div>
+    <!--submit用于提交表单域中的所有值-->
+    <div>
+        <input type="submit" value="免费注册">
+        <input type="reset" value="重置">
+        <input type="button" value="发送短信">
+    </div>
+    <!--不会提交表单域数据，常与JS配合使用-->
+    <div>上传头像: <input type="file"></div>
+</form>
+
+<!--下拉列表-->
+<div>
+    <form action="">
+        <label for="selection">下拉列表</label>
+        <select name="selection" id="selection">
+            <option value="山东">山东</option>
+            <option value="北京" selected>北京</option>
+            <option value="天津">天津</option>
+        </select>
+    </form>
+</div>
+
+<!--文本域-->
+<div>
+    <form action="">
+        <label for="text">今日反馈：</label>
+        <textarea name="text" id="text" cols="20" rows="5"></textarea>
+    </form>
+</div>
+</body>
+</html>
