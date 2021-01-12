@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /* 基础选择器 */
+        /* 标签选择器 */
+        p {
+            color: green;
+        }
+
+        div {
+            color: pink;
+        }
+
+        /* 类选择器，不能使用标签名，纯数字，中文命名 */
+        .red {
+            color: red;
+        }
+
+        /* 多类名，常使用于一些具有公共属性的类中 */
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        /* id选择器 */
+        #yellow {
+            color: yellow;
+        }
+
+        /* 通配符选择器 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<!--标签选择器案例-->
+<p>男生</p>
+<p>男生</p>
+<p>男生</p>
+<div>女生</div>
+<div>女生</div>
+<div>女生</div>
+<!--类选择器案例-->
+<ul>
+    <li class="red">冰雨</li>
+    <li class="red">来生源</li>
+    <li>力学来</li>
+    <li>江南</li>
+</ul>
+<!--多类名示例-->
+<div class="box pink">红色</div>
+<div class="box green">绿色</div>
+<div class="box pink">红色</div>
+<!--id选择器示例-->
+<div id="yellow">迈克尔杰克逊</div>
+</body>
+</html>

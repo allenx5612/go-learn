@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--css三种引入方式，嵌入式，行内式和外部引用-->
+    <style type="text/css">
+        /* 字体的设置 */
+        body {
+            font-family: "Microsoft Yahei", Arial, sans-serif;
+            /* 在body中使用font-size，标题元素不会受影响，chrome默认为16px */
+            font-size: 16px;
+        }
+        h2 {
+            font-size: 16px;
+        }
+        p {
+            /* 设置文字粗细 */
+            /* 数字等价于bold，lighter等，范围100-900, normal=400, bold=700 */
+            font-weight: 700;
+            /* 设置文字倾斜, 取值normal，italic */
+            font-style: italic;
+        }
+        em {
+            /* 常用于修改倾斜标签 */
+            font-style: normal;
+        }
+        /* 字体符合属性，必须有font-size和font-family */
+        div {
+            font: italic 700 20px "Microsoft Yahei", sans-serif;
+        }
+        /* 文本属性 */
+        .text-attr {
+            /* 字体颜色，可使用英文，16进制，rgb */
+            color: #fff000;
+            /* 水平对齐，默认为left */
+            text-align: center;
+            /*文本修饰，默认none，属性值underline，overline，line-through*/
+            text-decoration: underline;
+        }
+        p, div {
+            /*文本缩进, 长度可正可负，单位可用px，也可em，em表示一个文字大小距离*/
+            text-indent: 2em;
+            /*行间距，行间距包含文字高度，如16px的文字，16px的行间距，上下间距则为0*/
+            line-height: 26px;
+        }
+    </style>
+</head>
+<body>
+<!--字体的设置案例-->
+<h2>pink的秘密</h2>
+<p>颜色</p>
+<em>倾斜字体</em>
+<div>复合属性</div>
+<!--文本属性案例-->
+<div class="text-attr">文本属性</div>
+</body>
+</html>
