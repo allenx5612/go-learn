@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*css元素显示模式*/
+        /*块级元素*/
+        div {
+            height: 100px;
+            background-color: pink;
+        }
+        /*行内块元素*/
+        input {
+            width: 249px;
+            height: 35px;
+        }
+        /*显示模式转换*/
+        .to-block {
+            /*使用display进行转换*/
+            display: block;
+            width: 150px;
+            height: 50px;
+            background-color: red;
+        }
+        .to-inline {
+            display: inline;
+            background-color: purple;
+        }
+        .to-inline-block {
+            width: 100px;
+            height: 30px;
+            background-color: skyblue;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<!--块元素，文字类的标签不能包含块级元素，如p，h1等-->
+<div>独占一行</div><span>另一元素</span>
+<!--行内元素无法设置宽高，默认宽度就是内容本身的宽度，不允许包含块级元素，除a外，但a不能包含a-->
+<span>元素</span><span>元素</span>
+<!--行内块元素，img，input，td等，可设置宽高，又有行内元素的特点-->
+<input type="text">
+<input type="text">
+<!--显示模式转换-->
+<a href="#" class="to-block">行内转块级</a>
+<div class="to-inline">块级转行内</div>
+<div class="to-inline">块级转行内</div>
+<span class="to-inline-block">转行内块</span>
+<span class="to-inline-block">转行内块</span>
+</body>
+</html>

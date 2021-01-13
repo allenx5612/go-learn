@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*复合选择器*/
+        /*后代选择器*/
+        ol li {
+            color: pink;
+        }
+        .nav li {
+            color: yellow;
+        }
+        /*子选择器，某元素最近一级子元素*/
+        .child-selector > a {
+            color: red;
+        }
+        /*并集选择器*/
+        span, p, .pig li {
+            color: pink;
+        }
+        /*伪类选择器*/
+        /*链接伪类需按顺序才能生效*/
+        .pig2:link {
+            color: #333;
+            text-decoration: none;
+        }
+        .pig2:visited {
+            color: orange;
+        }
+        .pig2:hover {
+            color: skyblue;
+        }
+        /*鼠标按下的状态*/
+        .pig2:active {
+            color: green;
+        }
+        /*input等获得光标时的状态*/
+        input:focus {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--复合选择器-->
+<!--后代选择器案例-->
+<ol>
+    <li>后代选择</li>
+    <li>后代选择</li>
+    <li>后代选择</li>
+</ol>
+<ul>
+    <li>后代选择</li>
+    <li>后代选择</li>
+    <li>后代选择</li>
+</ul>
+<ul class="nav">
+    <li>后代选择</li>
+    <li>后代选择</li>
+    <li>后代选择</li>
+</ul>
+<!--子选择器案例-->
+<div class="child-selector">
+    <a href="#">最近子元素</a>
+    <p>
+        <a href="#">后代</a>
+    </p>
+</div>
+<!--并集选择器案例-->
+<div>雄大</div>
+<p>雄二</p>
+<span>光头强</span>
+<ul class="pig">
+    <li>小猪配器</li>
+    <li>猪爸爸</li>
+    <li>猪妈妈</li>
+</ul>
+<!--伪类选择器-->
+<a class="pig2" href="#">小猪配器</a>
+<input type="text">
+<input type="text">
+<input type="text">
+</body>
+</html>
