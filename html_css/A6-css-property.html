@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*css的三大特性*/
+        /*层叠性，采取就近原则，只覆盖冲突的属性*/
+        .stack {
+            color: red;
+            font-size: 20px ;
+        }
+        .stack {
+            color: pink;
+        }
+        /*继承性，子标签会继承父标签的某些属性，主要跟文字相关的属性*/
+        .inherit {
+            color: red;
+            /*当前文字大小的1.5倍行高*/
+            font: 12px/1.5 yahei;
+        }
+        /*优先级，相同选择器则使用层叠性，不同根据权重执行优先级，优先级为
+        !important>行内样式>ID选择器>类，伪类>元素选择器>继承或*
+         注意：a是默认执行了a {color: blue;}等的样式，是不会收父级元素的影响的*/
+        div {
+            color: black;
+        }
+        .priority {
+            color: red!important;
+        }
+        #priority {
+            color: purple;
+        }
+        /*复合选择器会有权重叠加的问题*/
+        ul li {
+            color: green;
+        }
+        li {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--层叠性-->
+<div class="stack">hhaha</div>
+<!--继承性-->
+<div class="inherit">
+    <p>hahhahha</p>
+    <ul>
+        <li>hahha</li>
+    </ul>
+</div>
+<!--优先级-->
+<div class="priority" id="priority">hahhaha</div>
+<ul>
+    <li>hahah</li>
+    <li>hahaha</li>
+    <li>hahhah</li>
+</ul>
+</body>
+</html>

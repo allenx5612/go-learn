@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*盒子模型*/
+        /*border属性，border-width，border-style，border-color*/
+        .border {
+            width: 300px;
+            height: 200px;
+            /*border-width: 5px;*/
+            /*!*取值solid，dashed，dotted等*!*/
+            /*border-style: solid;*/
+            /*border-color: red;*/
+            /*复合写法，无顺序*/
+            border: 5px solid red;
+            border-top: 5px solid pink;
+            border-bottom: 5px dashed purple;
+        }
+        /*padding属性*/
+        .pad {
+            width: 200px;
+            background-color: pink;
+            /*padding-left: 20px;*/
+            /*padding-top: 30px;*/
+            /*复合写法*/
+            /*一个值上线左右都相同*/
+            /*padding: 5px;*/
+            /*两个值，分别代表上下，左右*/
+            /*padding: 5px 10px;*/
+            /*三个值，上，左右，下*/
+            /*padding: 5px 10px 20px;*/
+            /*四个值，上，右，下，左*/
+            padding: 5px 10px 20px 30px;
+        }
+        /*在不指定宽或高的情况下，padding不会撑大盒子的宽或高，可将需要padding的元素
+         放入子元素，并且不指定宽高，如p元素所示*/
+        .pad-no-exceed {
+            width: 300px;
+            height: 100px;
+            background-color: purple;
+        }
+        .pad-no-exceed p {
+            padding: 30px;
+            background-color: skyblue;
+        }
+        /*margin属性*/
+        .margin {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*行内元素和行内块元素使用text-align居中即可*/
+            text-align: center;
+        }
+        .one {
+            /*margin-bottom: 20px;*/
+            /*复合写法同padding*/
+            /*margin: 10px 0;*/
+            /*设置左右auto可实现水平居中*/
+            margin: 10px auto;
+        }
+        /*盒子外边距合并问题解决，兄弟关系或父子关系会出现外边距合并，常为外边距较大的值，
+        这种情况尽量只给一个盒子添加边距，或用如下解决方案*/
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+            margin-top: 50px;
+            /*解决*/
+            /*border: 1px solid transparent;*/
+            /*padding: 1px;*/
+            /*常用不会改变盒子大小*/
+            overflow: hidden;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*内盒不会在外盒的位置向内移动100px，出现盒子塌陷问题*/
+            margin-top: 100px;
+        }
+        /*清除内外边距，常使用如下方式清除默认的内外编剧*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*案例1*/
+        table {
+            width: 500px;
+            height: 249px;
+        }
+        table, th, td {
+            border: 1px solid red;
+            /*解决cell与cell重叠部分边框较粗的问题*/
+            border-collapse: collapse;
+        }
+        /*案例2*/
+        .nav {
+            height: 41px;
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+            background-color: #fcfcfc;
+            line-height: 41px;
+        }
+        .nav a {
+            display: inline-block;
+            height: 41px;
+            font-size: 12px;
+            color: #4c4c4c;
+            text-decoration: none;
+            padding: 0 20px;
+        }
+        .nav a:hover {
+            background-color: #eee;
+            color: #ff8500;
+        }
+    </style>
+</head>
+<body>
+<!--盒子模型-->
+<!--border属性-->
+<div class="border"></div>
+<!--padding属性-->
+<div class="pad">盒子内容盒子内容盒子内容盒子内容盒子内容盒子内容</div>
+<div class="pad-no-exceed">
+    <p></p>
+</div>
+<!--margin属性-->
+<div class="margin one"><span>我是文字</span></div>
+<div class="margin two"><span>我是文字</span></div>
+<!--盒子外边距合并问题-->
+<div class="father">
+    <div class="son"></div>
+</div>
+
+<!--案例1-->
+<table cellspacing="0">
+    <thead>
+    <tr>
+        <th>part</th>
+        <th>mfg</th>
+        <th>desc</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<!--案例2-->
+<div class="nav">
+    <a href="#">设置首页</a>
+    <a href="#">手机新浪网</a>
+    <a href="#">移动客户端</a>
+    <a href="#">登录</a>
+    <a href="#">收藏</a>
+</div>
+</body>
+</html>
