@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*border-radius属性，取值可使用精确数值或百分比*/
+        .border-radius {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            /*border-radius: 10px;*/
+            /*宽高的一半*/
+            /*border-radius: 50%;*/
+            /*四个值从左上开始顺时针设置*/
+            /*border-radius: 10px 20px 30px 40px;*/
+            /*两个值左上，右上对角线设置*/
+            /*border-radius: 10px 20px;*/
+            /*三个值分别为左上，右上及对角线，右下*/
+            /*border-radius: 10px 20px 30px;*/
+            border-top-left-radius: 10px;
+        }
+        /*box-shadow属性
+        属性值h-shadow，v-shadow，blur，spread（阴影的尺寸），color，
+        inset(默认为outset，不用声明，inset时需明示)*/
+        .box-shadow {
+            width: 200px;
+            height: 200px;
+            background-color: #ff4e5f;
+        }
+        .box-shadow:hover {
+            box-shadow: 10px 10px 10px -4px rgba(0, 0, 0,.5);
+        }
+        /*text-shadows属性
+        属性值h-shadow，v-shadow，blur，color*/
+        .text-shadow {
+            font-size: 50px;
+            color: orangered;
+            font-weight: 700;
+            text-shadow: 5px 5px 6px rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+<body>
+<!--border-radius属性-->
+<div class="border-radius"></div>
+<!--box-shadow属性-->
+<div class="box-shadow"></div>
+<!--text-shadow属性-->
+<div class="text-shadow">我有阴影</div>
+</body>
+</html>

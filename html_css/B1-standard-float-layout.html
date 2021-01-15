@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*三种传统布局方式*/
+        /*普通流（标准流）块级或行内元素按照默认方式布局*/
+        /*浮动流*/
+        .float {
+            width: 200px;
+            height: 200px;
+        }
+        .float-left {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: orangered;
+        }
+        .left {
+        }
+        /*添加浮动会导致元素转换为行内块，如若不设置宽度，宽度会随内容变化*/
+        .float-right {
+            float: right;
+            height: 100px;
+            background-color: #ff4e5f;
+            color: black;
+        }
+        /*浮动练习1*/
+        .box {
+            width: 1200px;
+            height: 460px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        .practice-left {
+            float: left;
+            width: 230px;
+            height: 460px;
+            background-color: purple;
+        }
+        .practice-right {
+            float: right;
+            width: 970px;
+            height: 460px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--浮动流-->
+<div class="float-left"></div>
+<div class="float-right">woermendfsd</div>
+<!--left和right的浮动会使得下面的div压入因浮动空出的位置-->
+<div class="float"></div>
+<!--浮动练习1-->
+<!--一般布局时用标准内包含浮动流，使用边准流控制内盒位置-->
+<div class="box">
+    <div class="practice-left"></div>
+    <div class="practice-right"></div>
+</div>
+</body>
+</html>
