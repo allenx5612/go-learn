@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*三种传统布局方式*/
+        /*普通流（标准流）块级或行内元素按照默认方式布局*/
+        /*浮动流*/
+        .float {
+            width: 200px;
+            height: 200px;
+        }
+        .float-left {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: orangered;
+        }
+        /*添加浮动会导致元素转换为行内块，如若不设置宽度，宽度会随内容变化*/
+        .float-right {
+            float: right;
+            height: 100px;
+            background-color: #ff4e5f;
+            color: black;
+        }
+        /*父盒子不给高度，子盒子可撑开父盒子，但需要清除浮动，闭合浮动*/
+        .clear-float1 {
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+            /*方法2，给父元素添加overflow，取值hidden，auto，scroll，缺点
+            是不能显示溢出部分*/
+            /*overflow: hidden;*/
+        }
+        /*方法3，复原素添加after伪元素*/
+        /*.clear-float1:after {*/
+        /*    content: "";*/
+        /*    display: block;*/
+        /*    height: 0;*/
+        /*    clear: both;*/
+        /*    visibility: hidden;*/
+        /*}*/
+        /*.clear-float1 {*/
+        /*    !*IE6，7在使用after清除时使用*!*/
+        /*    *zoom: 1*/
+        /*}*/
+
+        /*方法4，双伪元素清除*/
+        .clear-float1:before, .clear-float1:after {
+            content: "";
+            display: table;
+        }
+        .clear-float1:after {
+            clear: both;
+        }
+        .clear-float1 {
+            *zoom: 1;
+        }
+        .clear-float1 .first {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        }
+        .clear-float1 .second {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        /*方法1，额外标签法(必须使用块级元素)，对额外标签使用
+        clear方法，取值left，right，both，一般使用both*/
+        /*.clear1 {*/
+        /*    clear: both;*/
+        /*}*/
+        .clear-float1-footer {
+            height: 200px;
+            background-color: black;
+        }
+
+        /*浮动练习1*/
+        .box {
+            width: 1200px;
+            height: 460px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        .practice-left {
+            float: left;
+            width: 230px;
+            height: 460px;
+            background-color: purple;
+        }
+        .practice-right {
+            float: right;
+            width: 970px;
+            height: 460px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--浮动流-->
+<div class="float-left"></div>
+<div class="float-right">woermendfsd</div>
+<!--left和right的浮动会使得下面的div压入因浮动空出的位置，浮动只会影响后面的标准流，
+使后面的标准流往上压，前面的标准流不会受影响，前面标准流还是会独占一行-->
+<div class="float"></div>
+<!--父盒子不给高度，子盒子可撑开父盒子-->
+<!--方法1，额外标签法-->
+<div class="clear-float1">
+    <div class="first"></div>
+    <div class="second"></div>
+<!--    <div class="clear1"></div>-->
+</div>
+<div class="clear-float1-footer"></div>
+
+<!--浮动练习1-->
+<!--一般布局时用标准内包含浮动流，使用边准流控制内盒位置-->
+<div class="box">
+    <div class="practice-left"></div>
+    <div class="practice-right"></div>
+</div>
+</body>
+</html>
