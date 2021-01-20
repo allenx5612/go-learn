@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            height: 4000px;
+        }
+        /*定位=定位模式+边偏移*/
+        /*定位模式，postion属性，取值static，relative，absolute，fixed*/
+        /*static具有标准流的属性，很少用*/
+        /*边偏移移动位置，分别有top，bottom，left，right*/
+        /*相对定位，相对于自身位置偏移，偏移后原标准流位置继续占有，不会影响其他元素的位置*/
+        .box1 {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: deeppink;
+        }
+        /*绝对定位，相对于祖先元素定位，无祖先元素或父元素无定位，则相对于文档定位*/
+        /*若最近一级父级有定位(静态定位除外),则相对于父级定位*/
+        /*绝对定位不占有原先位置,会脱离标准流*/
+        /*定位常用布局,子绝父相*/
+        .parent {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+        }
+        .child {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: orangered;
+        }
+        /*固定定位,相对于可视窗口,滚动时元素位置固定,不随滚动条滚动,并且不占有原先位置,会脱标*/
+        .w {
+            width: 800px;
+            height: 1400px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        .dj {
+            position: fixed;
+            /*固定贴版心右侧,先定位可视窗口一半,再margin或padding版心的一半*/
+            top: 50%;
+            left: 50%;
+            margin-left: 400px;
+        }
+        /*粘性定位,相对定位和固定定位的混合,页面滚动到一定位置时会转换为固定定位,必须跟上
+        偏移值,否则无效*/
+        .sticky {
+            position: sticky;
+            top: 0;
+            width: 800px;
+            height: 50px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+<!--粘性定位-->
+<div class="sticky"></div>
+<!--相对定位-->
+<div class="box1"></div>
+<div>
+    <div class="box2"></div>
+</div>
+<!--绝对定位-->
+<div class="parent">
+    <div class="child"></div>
+</div>
+<!--固定定位-->
+<!--固定贴版心示例-->
+<div class="dj"><img src="images/logo.png" alt=""></div>
+<div class="w"></div>
+</body>
+</html>

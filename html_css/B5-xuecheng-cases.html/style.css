@@ -224,14 +224,20 @@ a {
     width: 1225px;
 }
 .box-body ul li {
+    position: relative;
     float: left;
     width: 228px;
     background-color: #fff;
     height: 270px;
     margin: 0 15px 15px 0;
 }
-.box-body ul li img {
+.box-body ul li > img {
     width: 100%;
+}
+.box-body ul li > span {
+    position: absolute;
+    top: 4px;
+    right: -4px;
 }
 .box-body ul li h4 {
     margin: 20px 20px 20px 25px;
