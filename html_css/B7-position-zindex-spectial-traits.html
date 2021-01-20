@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            height: 200px;
+        }
+        /*定位的叠放次序,z-index,值越大越靠上,只有定位的盒子才有此属性*/
+        .zbox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+        }
+        .index1 {
+            z-index: 1;
+            background-color: red;
+        }
+        .index2 {
+            background-color: green;
+        }
+        .index3 {
+            background-color: blue;
+        }
+        /*绝对定位居中*/
+        .absolute-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -100px 0 0 -100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        /*定位特殊属性*/
+        /*1.绝对定位和固定定位,行内元素可直接添加高度宽度,无需转换*/
+        .special1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        /*2.块级元素绝对或固定,不给宽高默认为内容大小*/
+        .special2 {
+            position: absolute;
+            top: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+        /*3.脱标的盒子不会有外边距合并的问题*/
+        /*4.绝对固定会压住下方盒子中的文字,浮动不会压住文字
+        因为浮动最初用于文字环绕效果*/
+        .special4 {
+            /*float: left;*/
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--定位的叠放次序-->
+<div class="zbox index1"></div>
+<div class="zbox index2"></div>
+<div class="zbox index3"></div>
+<div></div>
+<!--绝对定位居中-->
+<div class="absolute-center"></div>
+<div></div>
+<!--special1-->
+<span class="special1"></span>
+<div></div>
+<!--special2-->
+<div class="special2">123123123</div>
+<div></div>
+<!--special4-->
+<div class="special4"></div>
+<p>womenddfdfsdfdfsdfsdfsdfsdfsdf</p>
+</body>
+</html>
