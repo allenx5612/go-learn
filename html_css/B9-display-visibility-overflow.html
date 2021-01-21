@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*元素的显示与隐藏*/
+        /*1. display常用block, inline, none, none隐藏同时不会占有原先位置*/
+        /*2. visibility 取值inherit, visible, collapse, hidden, 隐藏同时
+        继续占有原先位置*/
+        .display1 {
+            /*display: none;*/
+            visibility: hidden;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .display2 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        /*3. overflow溢出部分显示隐藏, 取值visible, auto, hidden, scroll
+        有定位的盒子慎用hidden, 会隐藏图片等多余部分*/
+        .overflow {
+            overflow: hidden;
+            width: 200px;
+            height: 100px;
+            border: 3px solid pink;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+<!--display, visibility-->
+<div class="display1"></div>
+<div class="display2"></div>
+<!--overflow-->
+<div class="overflow">
+    这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否
+    需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所
+    有内容也会出现滚动条。
+</div>
+</body>
+</html>

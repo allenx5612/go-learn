@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .tb-promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+        }
+        .tb-promo img {
+            width: 520px;
+            height: 280px;
+        }
+        .btn {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #fff;
+        }
+        .prev {
+            left: 0;
+            border-radius: 0 15px 15px 0;
+        }
+        .next {
+            right: 0;
+            border-radius: 15px 0 0 15px;
+        }
+        .promo-nav {
+            position: absolute;
+            left: 50%;
+            bottom: 15px;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            background: rgba(255, 255, 255, .3);
+            border-radius: 7px;
+        }
+        .promo-nav li {
+            float: left;
+            margin: 3px;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        .promo-nav .selected {
+            background-color: orangered;
+        }
+    </style>
+</head>
+<body>
+<div class="tb-promo">
+    <img src="images/tb.jpeg" alt="">
+    <a href="" class="btn prev">&lt;</a>
+    <a href="" class="btn next">&gt;</a>
+    <ul class="promo-nav">
+        <li class="selected"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
