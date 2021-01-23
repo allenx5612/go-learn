@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*精灵图,主要使用background-position经过偏移截取相应的图片,如使大图向左向上偏移,
+        0,0坐标位于大图的左上角*/
+        .sprites1 {
+            width: 60px;
+            height: 60px;
+            background: url("images/sprite.png") no-repeat -183px 0;
+        }
+        .sprites2 {
+            width: 27px;
+            height: 26px;
+            background: url("images/sprite.png") no-repeat -155px -105px;
+        }
+        /*字体小图标,本质属于文字,可改变大小颜色
+        使用:将下载的字体文件.eot,.svg,.ttf,.woff,不同文件主要为兼容性考虑,
+        放入同级fonts文件夹, 赋值css和demo.html的演示代码即可*/
+        /*字体声明,css中的font-face代码*/
+        @font-face {
+            font-family: 'icomoon';
+            src:  url('fonts/icomoon.eot?afvwo5');
+            src:  url('fonts/icomoon.eot?afvwo5#iefix') format('embedded-opentype'),
+              url('fonts/icomoon.ttf?afvwo5') format('truetype'),
+              url('fonts/icomoon.woff?afvwo5') format('woff'),
+              url('fonts/icomoon.svg?afvwo5#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        .small-fonts span {
+            font-family: 'icomoon', sans-serif;
+            font-size: 100px;
+            color: red;
+        }
+        /*css三角,设置宽高为0,三边透明一边不透明的边框实现三角,三角大小通过border粗细来
+        控制*/
+        .css-triangle {
+            width: 0;
+            height: 0;
+            /*设置line-height和font-size兼容低版本浏览器*/
+            line-height: 0;
+            font-size: 0;
+
+            border: 50px solid transparent;
+            border-left-color: yellow;
+        }
+        /*精灵图案例*/
+        .sprites-cases span {
+            display: inline-block;
+            background: url("images/abcd.jpeg") no-repeat;
+        }
+        .sprites-cases span:first-child{
+            width: 98px;
+            height: 115px;
+	        background-position: -495px -275px;
+        }
+        .sprites-cases span:nth-child(2){
+            width: 64px;
+            height: 111px;
+            background-position: -324px -140px;
+        }
+        .sprites-cases span:nth-child(3){
+            width: 116px;
+            height: 115px;
+            background-position: -254px -275px;
+        }
+        .sprites-cases span:nth-child(4){
+            width: 108px;
+            height: 115px;
+            background-position: -495px -140px;
+        }
+        /*css三角案例*/
+        .css-triangle-cases {
+            position: relative;
+            width: 120px;
+            height: 240px;
+            background-color: pink;
+        }
+        .css-triangle-cases span {
+            position: absolute;
+	        top: -20px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            border: 10px solid transparent;
+            border-bottom-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!--精灵图-->
+    <div class="sprites1"></div>
+    <div class="sprites2"></div>
+    <!--字体图标-->
+    <div class="small-fonts">
+        <!--赋值index.html中的特殊图标或icomoon网页app中的特殊图标-->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!--css三角-->
+    <div class="css-triangle"></div>
+    <!--精灵图案例-->
+    <div class="sprites-cases">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!--css三角案例-->
+    <div class="css-triangle-cases">
+        <span></span>
+    </div>
+</body>
+</html>
