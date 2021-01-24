@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*css初始化*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        em,
+        i {
+            /*取消文字默认倾斜*/
+            font-style: normal;
+        }
+        li {
+            list-style: none;
+        }
+        img {
+            /*border: 0为照顾低版本浏览器图片外包含连接会有边框的问题*/
+            border: 0;
+            vertical-align: middle;
+        }
+        button {
+            cursor: pointer;
+        }
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+        body {
+            /*设置文字放大后的抗锯齿*/
+            -webkit-font-smoothing: antialiased;
+            background-color: #fff;
+            /*\5B8B\4F53宋体的unicode编码,这样写有更好的兼容性,解决某些浏览器不识别中文的问题*/
+            font: 12px/1.5 Microsoft YaHei, Heiti, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53";
+            color: #666;
+        }
+        .clearfix:after {
+            visibility: hidden;
+            clear: both;
+            display: block;
+            content: ".";
+            height: 0;
+        }
+        .clearfix {
+            *zoom: 1;
+        }
+	    /*常见布局技巧*/
+        /*margin负值技巧*/
+        .minus-margin {
+            height: 200px;
+        }
+        ul li {
+            position: relative;
+            float: left;
+            list-style: none;
+            width: 150px;
+            height: 200px;
+            border: 1px solid red;
+            /*margin负值去除重叠边框*/
+            margin-left: -1px;
+        }
+        /*hover边框会出现除最后一个li,前面的li右边框被后面边框压住,不显示的问题*/
+        /*解决1:若li无定位,修改position为relative,使其压住旁边盒子*/
+        /*ul li:hover {*/
+        /*    position: relative;*/
+        /*    border: 1px solid blue;*/
+        /*}*/
+	    /*若li有定位,修改z-index即可*/
+        ul li:hover {
+	        z-index: 1;
+            border: 1px solid blue;
+        }
+        /*文字围绕浮动元素*/
+        .text-surround {
+            width: 300px;
+            height: 70px;
+            background-color: pink;
+	        padding: 5px;
+        }
+        .text-surround .pic {
+            float: left;
+            width: 120px;
+            height: 60px;
+            margin-right: 5px;
+        }
+        .text-surround .pic img {
+	        height: 100%;
+        }
+        /*行内块制作翻页图标,*/
+        /*行内块方便水平居中,并且默认带margin值*/
+        .incline-block-page {
+            text-align: center;
+        }
+        .incline-block-page a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            text-align: center;
+            line-height: 36px;
+            font-size: 14px;
+            color: #333;
+        }
+        /*css三角妙用*/
+        /*获得直角三角形的方法*/
+        .css-triangle {
+            width: 0;
+            height: 0;
+            /*!*将上边框改大,即可拉长直角三角形*!*/
+            /*border-top: 100px solid transparent;*/
+            /*border-right: 50px solid skyblue;*/
+            /*!*将下左的边框设为0,即可得到等腰三角形的一半,进而获得直角三角形*!*/
+            /*border-bottom: 0 solid blue;*/
+            /*border-left: 0 solid green;*/
+
+            /*此为简写形式*/
+            border-color: transparent skyblue transparent transparent;
+            border-style: solid;
+            border-width: 100px 50px 0 0;
+        }
+        /*案例*/
+        .triangle-case {
+            width: 160px;
+            height: 24px;
+            border: 1px solid red;
+            line-height: 24px;
+        }
+        .triangle-case .promo-price {
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 100%;
+            margin-right: 8px;
+            background-color: red;
+	        text-align: center;
+            color: #fff;
+            font-weight: 700;
+        }
+        .triangle-case .promo-price i {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 24px 12px 0 0;
+        }
+        .triangle-case .cur-price {
+            font-size: 12px;
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+<!--margin负值-->
+<div class="minus-margin">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+<!--文字围绕-->
+<div class="text-surround">
+    <div class="pic">
+        <img src="images/tb.jpeg" alt="">
+    </div>
+	<p>集锦热身赛巴西0-1秘鲁 内马尔替补两人血染赛场</p>
+</div>
+<!--行内块制作翻页图标-->
+<div class="incline-block-page">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">7</a>
+    <a href="#">8</a>
+</div>
+<!--css三角妙用-->
+<div class="css-triangle"></div>
+<div class="triangle-case">
+    <span class="promo-price">$1650<i></i></span>
+    <span class="cur-price">$5650</span>
+</div>
+</body>
+</html>

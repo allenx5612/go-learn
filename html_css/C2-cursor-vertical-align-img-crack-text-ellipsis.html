@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*更改鼠标样式,cursor*/
+        ul li {
+            /*cursor: default;*/
+            /*cursor: pointer;*/
+            /*cursor: move;*/
+            /*cursor: text;*/
+            cursor: not-allowed;
+        }
+        /*轮廓线*/
+        .outline input, textarea {
+            outline: none;
+        }
+        /*文本域取消resize*/
+        .outline textarea {
+            resize: none;
+        }
+        /*vertical-align用于设置图片或表单(行内块元素)和文字垂直对齐,只对行内元素或
+        行内块元素有效*/
+        .vertical-align img {
+            /*vertical-align: baseline;*/
+	        vertical-align: middle;
+	        /*vertical-align: bottom;*/
+            /*vertical-align: top;*/
+        }
+        /*解决图片底侧默认空白缝隙问题*/
+        .img-crack {
+            border: 1px solid red;
+        }
+        /*1.使用vertical-align调整,推荐*/
+        .img-crack img {
+            /*vertical-align: bottom;*/
+	        /*2.将图片转换为块级元素*/
+            display: block;
+        }
+        /*溢出文字省略号*/
+        .text-ellipsis {
+            width: 150px;
+            height: 65px;
+            background-color: pink;
+            /*normal表示溢出自动换行*/
+            /*white-space: normal;*/
+            /*nowrap溢出不换行*/
+            white-space: nowrap;
+            /*隐藏溢出文字*/
+            overflow: hidden;
+            /*省略号替代溢出文字*/
+            text-overflow: ellipsis;
+            /*多行省略,多用于webkit内核和移动端,有兼容性问题*/
+            /*overflow: hidden;*/
+	        /*text-overflow: ellipsis;*/
+            /*display: -webkit-box;*/
+            /*-webkit-line-clamp: 3;*/
+            /*-webkit-box-orient: vertical;*/
+        }
+    </style>
+</head>
+<body>
+<!--更改鼠标样式-->
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<!--轮廓线-->
+<div class="outline">
+    <input type="text">
+    <!--文本域resize-->
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</div>
+<!--垂直对齐-->
+<div class="vertical-align">
+    <img src="images/user.png" alt="">
+    <span>宝宝冰水</span>
+</div>
+<!--默认空白缝隙解决-->
+<div class="img-crack">
+    <img src="images/logo.png" alt="">
+</div>
+<!--溢出文字省略号-->
+<div class="text-ellipsis">
+    娃娃娃娃娃娃娃娃阿文哇啊娃娃娃娃娃娃娃娃娃娃
+    娃娃娃娃娃娃娃娃阿文哇啊娃娃娃娃娃娃娃娃娃娃
+</div>
+</body>
+</html>
