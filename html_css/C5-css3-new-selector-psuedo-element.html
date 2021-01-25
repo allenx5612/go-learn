@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+	    /*css3新特性*/
+        /*新增选择器*/
+
+	    /*属性选择器*/
+        /*具有value属性的input标签*/
+        input[value] {
+            color: pink;
+        }
+        /*type=text的input标签*/
+	    input[type="text"] {
+            color: pink;
+        }
+        /*以icon开头的class*/
+        div[class^="icon"] {
+            color: red;
+        }
+        /*以data结尾的class,*=表示属性中包含*/
+        div[class$="data"] {
+            color: skyblue;
+        }
+        /*类选择器,属性选择器和伪类选择器权重都为10*/
+
+        /*结构伪类选择器*/
+        .pseudo-class ul li:first-child {
+            background-color: pink;
+        }
+        .pseudo-class ul li:last-child {
+            background-color: skyblue;
+        }
+        /*可是数字,关键字或公式*/
+        .pseudo-class ul li:nth-child(2) {
+            background-color: #ccc;
+        }
+        /*偶数even,奇数odd*/
+        .pseudo-class ul li:nth-child(even) {
+            background-color: #ccc;
+        }
+        /*公式n从0开始计算,依次递增1,但是第0个或超出的元素会被忽略*/
+	    .pseudo-class ul li:nth-child(2n-1) {
+            background-color: #7f7f7f;
+        }
+	    /*nth-child与nth-of-type的区别*/
+	    /*nth-child会将所有的child排序,先寻找第n个child,再看左边是否为div,若不是,则
+	    不会产生效果*/
+        section div:nth-child(1) {
+            color: yellow;
+        }
+        /*nth-of-type会将所有指定的div排序,然后再去寻找第几个child,所以第一个div会被选中*/
+        section div:nth-of-type(1) {
+            color: red;
+        }
+
+        /*伪元素选择器*/
+	    /*伪元素选择器必须有content属性,before和after会将伪元素插入到现元素内的前或后
+	    生成的伪元素不会出现在文档树中,属于行内元素,无宽高,权重为1*/
+	    /*使用场景1*/
+	    .pseudo-select1 {
+            position: relative;
+            width: 200px;
+            height: 35px;
+		    border: 1px solid red;
+        }
+        .pseudo-select1::after {
+            position: absolute;
+            right: 15px;
+            content: '>';
+            line-height: 35px;
+	        font-size: 18px;
+            color: red;
+        }
+        /*使用场景2*/
+        .pseudo-select2 {
+            position: relative;
+            width: 444px;
+            height: 320px;
+        }
+        .pseudo-select2 img {
+            width: 100%;
+            height: 100%;
+        }
+        .pseudo-select2:hover::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3) url("images/arrow.png") no-repeat center;
+        }
+        /*伪元素使用场景3:清除浮动*/
+    </style>
+</head>
+<body>
+<!--属性选择器-->
+<input type="text" value="请输入用户名">
+<input type="text">
+<input type="text" name="">
+<input type="password" name="">
+<div class="icon1">小图标1</div>
+<div class="icon2">小图标2</div>
+<div class="icon3">小图标3</div>
+<div class="icon4">小图标4</div>
+<div class="con1-data">you</div>
+<div class="con2-data">you</div>
+<div class="con3-ico">you</div>
+
+<!--结构伪类选择器-->
+<div class="pseudo-class">
+    <ul>
+        <li>我是1</li>
+        <li>我是2</li>
+        <li>我是3</li>
+        <li>我是4</li>
+        <li>我是5</li>
+        <li>我是6</li>
+        <li>我是7</li>
+        <li>我是8</li>
+    </ul>
+</div>
+<!--nth-child与nth-of-type的区别-->
+<section>
+    <p>1</p>
+    <div>2</div>
+    <div>3</div>
+</section>
+
+<!--伪元素选择器-->
+<div class="pseudo-select1"></div>
+<div class="pseudo-select2">
+    <img src="images/tudou.jpeg" alt="">
+</div>
+</body>
+</html>

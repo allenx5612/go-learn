@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*html新标签属性*/
+        /*header,nav,aside,section,article,footer,IE9需转换为块级元素*/
+        header, nav {
+            width: 800px;
+            height: 120px;
+            background-color: pink;
+            border-radius: 15px;
+            margin: 15px auto;
+        }
+        section {
+            width: 500px;
+            height: 300px;
+            background-color: skyblue;
+        }
+        /*audio,video*/
+        video {
+	        width: 100%;
+        }
+    </style>
+</head>
+<body>
+<!--html新标签属性-->
+<!--header,nav,aside,section,article,footer,IE9需转换为块级元素-->
+<header>头部标签</header>
+<nav>导航栏</nav>
+<section>某个区域</section>
+<!--audio,video-->
+<!--video只支持MP4,WebM和Ogg格式-->
+<!--chrome autoplay需加上muted属性-->
+<!--poster属性为视频载入图片,载入时或网速较慢时会显示-->
+<video src="media/mi.mp4" autoplay="autoplay" muted="muted" loop="loop"
+poster="images/mi9.jpeg"></video>
+<!--audio支持MP3,WAV,Ogg-->
+<audio src="media/music.mp3" controls="controls" loop="loop"></audio>
+<!--新增input: email,url,date,time,month,week,number,tel,search,color-->
+<!--验证时必须添加form表单域-->
+<!--新增表单属性: required,placeholder,autofocus,autocomplete,multiple(多选文件)-->
+<form action="">
+    <ul>
+        <li>邮箱: <input type="email" required="required"></li>
+        <li>网址: <input type="url" placeholder="http://www.sss.com"></li>
+        <li>日期: <input type="date"></li>
+        <li>时间: <input type="time"></li>
+        <li>数量: <input type="number"></li>
+        <li>手机号码: <input type="tel"></li>
+        <!-- autocomplete必须要有name属性-->
+        <li>搜索: <input type="search" name="search" autofocus="autofocus" autocomplete="on"></li>
+        <li>颜色: <input type="color"></li>
+        <li><input type="submit"></li>
+    </ul>
+</form>
+</body>
+</html>
