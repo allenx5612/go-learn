@@ -1,0 +1,143 @@
+/*首页主内容模块,因各页面内容不同，故代码不放在common.css内*/
+/*main*/
+.main {
+    margin-top: 10px;
+    width: 980px;
+    height: 455px;
+    margin-left: 220px;
+}
+.focus {
+    float: left;
+    width: 721px;
+    height: 455px;
+    background-color: purple;
+}
+.newsflash {
+    float: right;
+    width: 250px;
+    height: 455px;
+}
+.news {
+    height: 165px;
+    border: 1px solid #e4e4e4;
+}
+.news-hd {
+    height: 33px;
+    line-height: 33px;
+    border-bottom: 1px dotted #e4e4e4;
+    padding: 0 15px;
+}
+.news-hd h5 {
+    float: left;
+    font-size: 14px;
+}
+.news-hd .more {
+    float: right;
+    font-size: 14px;
+}
+.news-hd .more::after {
+    font-family: 'icomoon';
+    content: '\e920';
+}
+.news-bd {
+    padding: 5px 15px 0;
+}
+.news-bd li {
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.lifeservice {
+    overflow: hidden;
+    height: 209px;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+}
+.lifeservice ul {
+    width: 252px;
+}
+.lifeservice ul li {
+    float: left;
+    width: 63px;
+    height: 71px;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: center;
+}
+.lifeservice ul li i {
+    display: inline-block;
+    width: 24px;
+    height: 28px;
+    background-color: pink;
+    margin-top: 12px;
+    background: url("../images/icons.png") no-repeat -16px -15px;
+}
+.bargain {
+    margin-top: 5px;
+}
+
+/* recommend */
+.recommend {
+    height: 163px;
+    margin-top: 12px;
+}
+.recom-hd {
+    float: left;
+    width: 208px;
+    height: 163px;
+    background-color: #5c5251;
+    text-align: center;
+    padding-top: 30px;
+}
+.recom-bd {
+    float: left;
+}
+.recom-bd ul li {
+    position: relative;
+    float: left;
+}
+.recom-bd ul li img {
+    width: 248px;
+    height: 163px;
+}
+.recom-bd ul li:nth-child(-n+3)::after {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    content: '';
+    width: 1px;
+    height: 145px;
+    background-color: #ddd;
+}
+
+/* floor楼层区 */
+/* home-appliances*/
+.floor .w {
+    margin-top: 30px;;
+}
+.box-hd {
+    height: 30px;
+    border-bottom: 2px solid #c81623;
+}
+.box-hd h3 {
+    float: left;
+    font-size: 18px;
+    color: #c81623;
+    font-weight: 400;
+}
+.tab-list {
+    float: right;
+    line-height: 30px;
+}
+.tab-list ul li {
+    float: left;
+}
+.tab-list ul li a {
+    margin: 0 15px;
+}
+.box-bd {
+    height: 361px;
+    background-color: pink;
+}
