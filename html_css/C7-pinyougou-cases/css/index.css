@@ -139,5 +139,40 @@
 }
 .box-bd {
     height: 361px;
-    background-color: pink;
+}
+/*只给tab-list-item的下一级div加浮动，不影响下下级或之后的div*/
+.tab-list-item>div {
+    float: left;
+    height: 361px;
+    text-align: center;
+}
+.col-210 {
+    width: 210px;
+    background-color: #f9f9f9;
+}
+.col-210 ul {
+    padding-left: 12px;
+}
+.col-210 ul li {
+    float: left;
+    width: 85px;
+    height: 34px;
+    border-bottom: 1px solid #cccccc;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 34px;
+}
+.col-329 {
+    width: 329px;
+}
+.col-221 {
+    width: 221px;
+    border-right: 1px solid #ccc;
+}
+.col-219 {
+    width: 219px;
+}
+.bb {
+    display: block;
+    border-bottom: 1px solid #ccc;
 }
