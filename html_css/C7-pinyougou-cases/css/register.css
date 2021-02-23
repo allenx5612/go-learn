@@ -1,0 +1,127 @@
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* header */
+header {
+    height: 84px;
+    border-bottom: 2px solid #c81523;
+}
+.logo {
+    padding-top: 18px;
+}
+
+/* register-area */
+.register-area {
+    height: 522px;
+    border: 1px solid #cccccc;
+    margin-top: 20px;
+}
+.register-hd {
+    height: 42px;
+    background-color: #ececec;
+    line-height: 42px;
+    padding: 0 10px;
+}
+.register-hd h3 {
+    float: left;
+    font-size: 18px;
+    font-weight: 400;
+}
+.login {
+    float: right;
+    font-size: 14px;
+}
+.login a {
+    color: #c81523;
+}
+.register-form {
+    width: 600px;
+    margin: 50px auto 0;
+}
+.register-form ul li {
+    margin-bottom: 20px;
+}
+.register-form ul li label {
+    display: inline-block;
+    width: 88px;
+    text-align: right;
+}
+.register-form ul li .inp {
+    width: 242px;
+    height: 37px;
+    border: 1px solid #cccccc;
+}
+.icon-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.error {
+    color: #c81523;
+}
+.err-img {
+    background: url(../images/error.png) no-repeat;
+}
+.accept {
+    color: #40b83f;
+}
+.accept-img {
+    background: url(../images/success.png) no-repeat;
+}
+.safety-lvl {
+    padding-left: 167px;
+}
+.safety-lvl em {
+    padding: 0 12px;
+    color: #fff;
+}
+.weak {
+    background-color: #de1111;
+}
+.middle {
+    background-color: #40b83f;
+}
+.strong {
+    background-color: #f79100;
+}
+.agreement {
+    padding-left: 90px;
+}
+.agreement input {
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.agreement a {
+    color: #1ba1e6;
+}
+.btn {
+    width: 200px;
+    height: 34px;
+    margin: 30px 0 0 110px;
+    background-color: #c81523;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* footer */
+.mod-copyright {
+    text-align: center;
+    padding-top: 20px;
+}
+.links {
+    margin-bottom: 15px;
+}
+.links a {
+    border-right: 1px solid #ccc;
+    padding: 0 6px 0 2px;
+}
+.links a:last-child {
+    border-right: none;
+}
+.address {
+    line-height: 20px;
+}
