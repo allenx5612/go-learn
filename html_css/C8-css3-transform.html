@@ -7,16 +7,20 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
         /*1. 移动,translate(x,y),不会影响其他元素的位置,对行内标签无效*/
         .translate {
             width: 200px;
             height: 200px;
             background-color: pink;
-			/*transform: translate(100px, 100px);*/
+            /*transform: translate(100px, 100px);*/
             /*transform: translateX(100px);*/
             /*transform: translateY(100px);*/
-	        /*使用百分比移动相当于自身宽高的百分比距离*/
-	        transform: translate(50%, 50%);
+            /*使用百分比移动相当于自身宽高的百分比距离*/
+            transform: translate(50%, 50%);
         }
         /*垂直剧中*/
         .center {
@@ -26,47 +30,144 @@
             background-color: purple;
         }
         .center p {
-	        position: absolute;
-	        top: 50%;
-	        left: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
             width: 200px;
             height: 200px;
-	        margin: 0;
+            margin: 0;
             background-color: green;
-	        transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
         /*2.旋转rotate，单位deg,正值顺时针旋转*/
-		.rotate {
+        .rotate {
             width: 200px;
             height: 200px;
             background-color: pink;
-			transition: all 1s ease;
-		}
-		.rotate:hover {
-			transform: rotate(360deg);
-		}
+            transition: all 1s ease;
+        }
+        .rotate:hover {
+            transform: rotate(360deg);
+        }
         /*旋转写下拉箭头案例*/
         .rotate-cases {
-	        position: relative;
+            position: relative;
             width: 249px;
             height: 35px;
-	        border: 1px solid #000;
+            border: 1px solid #000;
         }
         .rotate-cases::after {
-	        content: "";
+            content: "";
             position: absolute;
-	        top: 8px;
-	        right: 15px;
+            top: 10px;
+            right: 17px;
             width: 10px;
             height: 10px;
-	        border-right: 1px solid #000;
-	        border-bottom: 1px solid #000;
-			transform: rotate(45deg);
-	        transition: all .2s linear;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            /*通过设置transform-origin设置中心点*/
+            /*默认50% 50%*/
+            transform-origin: 70% 70%;
+            /*transform-origin: right bottom;*/
+            /*transform-origin: 5px 5px;*/
+            transform: rotate(45deg);
+            transition: all .2s linear;
         }
         .rotate-cases:hover::after {
-	        transform: rotate(225deg);
+            transform: rotate(225deg);
         }
+        /*设置中心点案例*/
+        .origin-case {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+        .origin-case::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: grey;
+            transform-origin: left bottom;
+            transform: rotate(180deg);
+            transition: all .4s ease;
+        }
+        .origin-case:hover::after {
+            transform: rotate(0deg);
+        }
+        /*缩放:可跟数字（不加单位）1则为1倍,不变,小于1则缩放,
+        相较于手动更改高度的好处：不会影响其他盒子，可设置缩放的中心点，手动更改是往两边并向
+        下延伸*/
+        .scale {
+            position: relative;
+            top: -100px;
+            left: 300px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .scale:hover {
+            /*transform: scale(2, 2);*/
+            /*宽高一样*/
+            transform: scale(2);
+            /*transform: scale(0.5);*/
+        }
+        /*缩放案例*/
+        .scale-case {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+        .scale-case a img {
+            width: 200px;
+            transition: all .4s;
+        }
+        .scale-case a img:hover {
+            transform: scale(1.1);
+        }
+        /*分页按钮*/
+		.w {
+            width: 1200px;
+			margin: 0 auto;
+		}
+        .page-button {
+            width: 435px;
+            height: 50px;
+	        margin: 0 auto;
+	        line-height: 50px;
+        }
+        .page-button ul li {
+	        float: left;
+	        list-style: none;
+	        margin: 0 10px;
+        }
+        .page-button ul li a {
+	        display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            border-radius: 50%;
+	        text-decoration: none;
+	        color: #000;
+            text-align: center;
+            line-height: 40px;
+            transition: all .4s;
+        }
+        .page-button ul li a:hover {
+	        transform: scale(1.2);
+        }
+        /*综合写法，会受顺序影响，有位移时优先写位移*/
+		.sum-up {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+			transition: all .4s;
+		}
+		.sum-up:hover {
+			transform: translate(150px, 50px) rotate(180deg) ;
+		}
 	</style>
 </head>
 <body>
@@ -80,5 +181,27 @@
 <div class="rotate"></div>
 <!--旋转写下拉箭头案例-->
 <div class="rotate-cases"></div>
+<!--设置中心点案例-->
+<div class="origin-case"></div>
+<!--缩放-->
+<div class="scale"></div>
+<!--缩放案例-->
+<div class="scale-case">
+	<a href="#"><img src="images/scale.jpg" alt=""></a>
+</div>
+<!--分页按钮-->
+<div class="page-button w">
+	<ul>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">6</a></li>
+		<li><a href="#">7</a></li>
+	</ul>
+</div>
+<!--综合写法-->
+<div class="sum-up"></div>
 </body>
 </html>
