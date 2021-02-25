@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+		/*3D转换,z轴往外为正值，往内为负值，需配合perspective才会产生效果*/
+		/*translateZ一般用px，不用百分比单位*/
+		.tran-z {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+			/*transform: translateZ(100px);*/
+			/*简写,translate(x,y,z)*/
+			transform: translate3d(400px, 0, 100px);
+		}
+		/*透视：可将3D物体透视到2D平面上，视觉点离屏幕越近，物体越大，单位像素，写到被观察
+		元素的父盒子上*/
+		body {
+			perspective: 500px;
+		}
+		.perspective {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+			margin: 0 auto;
+			animation: walkin 2s linear infinite alternate;
+		}
+		@keyframes walkin {
+			0% {
+				transform: translateZ(0);
+			}
+            100% {
+                transform: translateZ(200px);
+            }
+        }
+		/*3D旋转，rotate3d，rotateX，rotateY，rotateZ，rotate3d(x,y,z,deg)*/
+		/*rotateX正值朝里翻转，负值向外,左手准则判断，左手拇指指向X轴正方先，四指弯曲方向则为
+		正值,其余轴同理*/
+		.rotate {
+			display: block;
+			margin: 50px auto;
+			transition: all 1s;
+		}
+		.rotate:hover {
+			/*transform: rotateX(360deg);*/
+			/*transform: rotateY(360deg);*/
+			/*transform: rotateZ(360deg);*/
+			/*transform: rotate3d(1, 0, 0, 180deg);*/
+            transform: rotate3d(1, 1, 0, 180deg);
+		}
+	</style>
+</head>
+<body>
+<!--transitionZ-->
+<div class="tran-z"></div>
+<!--perspective-->
+<div class="perspective"></div>
+<!--rotate3d-->
+<img src="images/tb.jpeg" alt="" class="rotate">
+</body>
+</html>

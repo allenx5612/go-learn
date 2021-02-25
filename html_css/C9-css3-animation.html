@@ -22,7 +22,7 @@
 				transform: translateX(0);
 			}
             100% {
-                transform: translateX(1009px);
+                transform: translateX(900px);
             }
         }
 		.demo1 {
@@ -104,6 +104,81 @@
         .city div.pulse3 {
 	        animation-delay: 1.6s;
         }
+        /*速度曲线细节，steps，将动画分为几步完成动画*/
+		.steps {
+            width: 0;
+            height: 30px;
+			overflow: hidden;
+            white-space: nowrap;
+            background-color: pink;
+			animation: step 4s steps(10) forwards;
+			font-size: 20px;
+		}
+		@keyframes step {
+			0% {
+				width: 0;
+			}
+			100% {
+                width: 200px;
+			}
+        }
+		/*奔跑的熊大案例*/
+		.running-bear {
+			position: relative;
+            width: 100%;
+			height: 400px;
+            background-color: #000000;
+		}
+		.background {
+			position: absolute;
+			bottom: 100px;
+            width: 100%;
+            height: 300px;
+			background: url("images/bg2.png") repeat-x;
+			animation: moveleft 40s linear infinite;
+		}
+        .foreground {
+	        position: absolute;
+	        bottom: 0;
+            width: 100%;
+            height: 300px;
+            background: url("images/bg1.png") repeat-x;
+            animation: moveleft 20s linear infinite;
+        }
+        .bear {
+	        position: absolute;
+	        bottom: 0;
+            width: 200px;
+            height: 100px;
+	        background: url("images/bear.png") no-repeat;
+	        animation: run 1s steps(8) infinite, moveright 2s linear forwards;
+        }
+        @keyframes moveleft {
+			0% {
+				background-position: 0 0;
+			}
+	        100% {
+		        /*移动图片宽度形成闭环图*/
+                background-position: -3840px 0;
+	        }
+        }
+        @keyframes run {
+	        0% {
+		        background-position: 0 0;
+	        }
+	        100% {
+		        background-position: -1600px 0;
+	        }
+        }
+        @keyframes moveright {
+	        0% {
+		        left: 0;
+	        }
+	        100% {
+		        left: 50%;
+		        transform: translateX(-50%);
+	        }
+        }
 	</style>
 </head>
 <body>
@@ -129,6 +204,14 @@
 		<div class="pulse2"></div>
 		<div class="pulse3"></div>
 	</div>
+</div>
+<!--速度曲线细节，steps-->
+<div class="steps">实际家园我在这里等你</div>
+<!--奔跑的熊大案例-->
+<div class="running-bear">
+	<div class="background"></div>
+	<div class="foreground"></div>
+	<div class="bear"></div>
 </div>
 </body>
 </html>
