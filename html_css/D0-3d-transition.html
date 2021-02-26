@@ -52,6 +52,66 @@
 			/*transform: rotate3d(1, 0, 0, 180deg);*/
             transform: rotate3d(1, 1, 0, 180deg);
 		}
+		/*transform-style：用于控制子元素是否开启立体空间，默认flat，不开启，preserve-3d开启*/
+		.tran-style {
+			position: relative;
+            width: 200px;
+            height: 200px;
+			margin: 20px auto;
+			/*是子盒子保持3d状态，flat子盒子在hover时会恢复2d状态*/
+			transform-style: preserve-3d;
+			transition: all 1s;
+		}
+		.tran-style:hover {
+			transform: rotateY(45deg);
+		}
+		.tran-style div {
+            position: absolute;
+			top: 0;
+			left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+		}
+		.tran-style div:last-child {
+            background-color: purple;
+			transform: rotateX(90deg);
+		}
+		/*两面翻转案例*/
+		.flip-both-side {
+			perspective: 500px;
+		}
+		.inner {
+            position: relative;
+            width: 200px;
+            height: 200px;
+			margin: 10px auto;
+			transition: all 1s;
+			transform-style: preserve-3d;
+		}
+		.inner:hover {
+			transform: rotateY(180deg);
+		}
+		.inner div {
+            position: absolute;
+			top: 0;
+			left: 0;
+            width: 100%;
+            height: 100%;
+			border-radius: 50%;
+			font-size: 30px;
+			color: #fff;
+			text-align: center;
+			line-height: 200px;
+		}
+		.front {
+            background-color: pink;
+			z-index: 1;
+		}
+		.back {
+            background-color: purple;
+			transform: rotateY(180deg);
+		}
 	</style>
 </head>
 <body>
@@ -61,5 +121,17 @@
 <div class="perspective"></div>
 <!--rotate3d-->
 <img src="images/tb.jpeg" alt="" class="rotate">
+<!--transform-style-->
+<div class="tran-style">
+	<div></div>
+	<div></div>
+</div>
+<!--cases-->
+<div class="flip-both-side">
+	<div class="inner">
+		<div class="front">黑马程序员</div>
+		<div class="back">我在这里等你</div>
+	</div>
+</div>
 </body>
 </html>
