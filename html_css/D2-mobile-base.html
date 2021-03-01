@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--视口标签,标准写法如下-->
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.double-size-img img:last-child {
+            width: 50px;
+            height: 50px;
+		}
+	</style>
+</head>
+<body>
+<!--1.视口（viewport）,浏览器显示页面内容的屏幕区域，分为布局视口，视觉视口和理想视口，
+默认布局视口，移动端一般使用理想视口-->
+<!--layout viewport，布局视口，早期用于PC端在手机浏览器的显示问题，手机上缩放显示，元素
+看起来较小-->
+<!--visual viewport，视觉视口，用户正在看到的网站区域-->
+<!--ideal viewport，理想视口，通过meta视口标签通知浏览器设定理想的浏览宽度和高度-->
+<!--视口标签属性，width设置viewport宽度，可设置device-width等特殊值
+initial-scale，初始缩放比，大于0的数字
+maximum-scale，最大缩放比，大于0的数字
+minimum-上擦了，最小缩放比，同上
+user-scalable，用户是否可缩放，yes或no（1或0）-->
+
+<!--2.二倍图，图片到手机端会放大，导致图片模糊的问题，
+避免图片到手机端模糊的策略，如需要50×50的图片，先准备一张100×100的图片，
+然后手动缩小为50×50，准备的图片比实际需要的大两倍，称为二倍图-->
+<div class="double-size-img">
+	<img src="images/apple50.jpg" alt="">
+	<img src="images/apple100.jpg" alt="">
+</div>
+
+</body>
+</html>
