@@ -12,6 +12,37 @@
             width: 50px;
             height: 50px;
 		}
+		.bg-size {
+            width: 500px;
+            height: 500px;
+			border: 2px solid red;
+			background: url("images/dog.jpg") no-repeat;
+            /*background-size: 500px 200px;*/
+            /*background-size: 500px;*/
+            /*background-size: 50%;*/
+            /*background-size: cover  ;*/
+            background-size: contain;
+		}
+		.bg-double-size {
+            width: 50px;
+            height: 50px;
+			border: 2px solid red;
+			background: url("images/apple100.jpg") no-repeat;
+            background-size: 50px 50px;
+		}
+		/*移动端特殊样式*/
+		a {
+			/*去除移动端链接点击时的背景蓝色*/
+			-webkit-tap-highlight-color: transparent;
+		}
+		input {
+			/*去除ios button的默认外部发光效果*/
+			-webkit-appearance: none;
+		}
+		img, a {
+			/*去除长时间点击链接，图片的右键弹出菜单*/
+			-webkit-touch-callout: none;
+		}
 	</style>
 </head>
 <body>
@@ -34,6 +65,11 @@ user-scalable，用户是否可缩放，yes或no（1或0）-->
 	<img src="images/apple50.jpg" alt="">
 	<img src="images/apple100.jpg" alt="">
 </div>
-
+<!--3.背景缩放，background-size: width, height，可选cover和contain参数
+cover将图片覆盖整个区域，图片显示可能会被裁剪，contain扩大图片，图片会完全显示，可能
+优空白区域-->
+<div class="bg-size"></div>
+<!--背景二倍图或多倍图-->
+<div class="bg-double-size"></div>
 </body>
 </html>

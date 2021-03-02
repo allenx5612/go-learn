@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+        /*移动端技术选型，分为单独制作和响应式页面兼容移动端，*/
+        /*单独制作可用流式布局（百分比布局），flex弹性布局，less+rem+媒体查询布局以及混合布局*/
+        /*响应式页面有媒体查询，bootstrap等*/
+        /*1.流式布局，非固定像素布局，通过设置盒子百分比宽度来根据屏幕伸缩，内容向两侧填充*/
+        * {
+	        margin: 0;
+	        padding: 0;
+        }
+		.percent-layout {
+            width: 100%;
+			/*设置最大最小宽度以防止盒子内容在浮动时掉落*/
+			max-width: 980px;
+			min-width: 320px;
+			margin: 0 auto;
+		}
+		.percent-layout div {
+			float: left;
+            width: 50%;
+            height: 200px;
+		}
+		.percent-layout div:first-child {
+            background-color: pink;
+		}
+		.percent-layout div:last-child {
+            background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<section class="percent-layout">
+		<div></div>
+		<div></div>
+	</section>
+</body>
+</html>
