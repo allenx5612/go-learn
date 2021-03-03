@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+		/*flex布局，flexible-box，flex布局简单，IE11或以下版本兼容性差，
+		当给父盒子设置flex后，子元素的float，clear，vertical-align将失效*/
+
+		/*flex布局父项常见属性
+		flex-direction:设置主轴(x轴默认)方向
+		justify-content:设置主轴子项的排列方式
+		flex-wrap:设置子项是否自动换行
+		align-content：设置侧轴(Y轴默认)上子元素的排列方式（多行）
+		align-items：设置侧轴上子元素的排列方式（单行）
+		flex-flow：复合属性，相当于同时设置了flex-direction和flex-wrap*/
+
+		/*1.flex-direction*/
+		.flex-direction {
+			/*需要设置在父盒子上*/
+			display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+			/*1.主轴默认x轴，从左至右，可不加此句,盒子会跟随主轴排列*/
+			/*flex-direction: row;*/
+			/*从右至左*/
+			flex-direction: row-reverse;
+			/*主轴Y轴，从上到下*/
+			/*flex-direction: column;*/
+            /*主轴Y轴，从下到上*/
+			/*flex-direction: column-reverse;*/
+
+		}
+		.flex-direction span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+		}
+        .justify-content {
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+	        /*设置主轴上的排列*/
+	        /*默认,从头部开始*/
+			/*justify-content: flex-start;*/
+	        /*从尾部开始*/
+	        /*justify-content: flex-end;*/
+	        /*justify-content: center;*/
+	        /*平分剩余空间*/
+	        /*justify-content: space-around;*/
+	        /*先两边贴边，再平分剩余空间*/
+	        justify-content: space-between;
+        }
+        .justify-content span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+        }
+        /*默认flex-wrap是不换行的, nowrap，多余的元素会挤在同一行上，盒子大小会改变*/
+        .flex-wrap {
+            display: flex;
+            width: 500px;
+            height: 300px;
+            background-color: pink;
+			flex-wrap: wrap;
+        }
+        .flex-wrap span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+        }
+
+        /*align-items只适合子项为单行时使用*/
+        .align-items {
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+	        justify-content: center;
+	        align-items: center;
+	        /*align-items: flex-start;*/
+	        /*align-items: flex-end;*/
+	        /*在子盒子没有高度的情况下，会拉伸子盒子至父盒子高度*/
+	        /*align-items: stretch;*/
+        }
+        .align-items span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+        }
+
+        .align-content {
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+	        flex-wrap: wrap;
+	        /*在有换行的情况下，出现多行更适合使用align-content*/
+	        /*align-content: flex-start;*/
+	        /*align-content: flex-end;*/
+	        /*align-content: center;*/
+	        /*align-content: space-around;*/
+	        align-content: space-between;
+	        /*align-content: stretch;*/
+
+	        /*flex-direction和flex-wrap简写;*/
+	        flex-flow: column wrap;
+        }
+        .align-content span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+        }
+
+        /*flex子项常见属性
+        flex子项占分配空间的份数
+        align-self控制子项自己在侧轴的排列方式
+        order定义子项的排列顺序（前后顺序）*/
+        .flex {
+            display: flex;
+            width: 800px;
+            height: 100px;
+            background-color: pink;
+	        margin: 0 auto;
+        }
+        .flex div:nth-child(1) {
+            width: 150px;
+            height: 100px;
+            background-color: red;
+        }
+        .flex div:nth-child(2) {
+	        /*flex: 1表示独自分配剩余空间*/
+	        flex: 1;
+            background-color: green;
+        }
+
+        .flex div:nth-child(3) {
+            width: 150px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .flex1 {
+            display: flex;
+            width: 800px;
+            height: 100px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        .flex1 span {
+	        /*不给宽度，整个盒子宽度都为剩余空间，span各自占用一份*/
+	        flex: 1;
+        }
+
+        .align-self-order {
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+            justify-content: center;
+        }
+        .align-self-order span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+        }
+        .align-self-order span:nth-child(2) {
+	        /*数字越小越3靠前，默认0*/
+	        order: -1;
+        }
+        .align-self-order span:nth-child(3) {
+	        /*可控制某个盒子在侧轴上的对齐方式,auto继承复合子的align-items属性*/
+            align-self: flex-end;
+        }
+	</style>
+</head>
+<body>
+<!--flex-direction-->
+<div class="flex-direction">
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+	<span>4</span>
+</div>
+<!--justify-content-->
+<div class="justify-content">
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+	<span>4</span>
+</div>
+<!--flex-wrap-->
+<div class="flex-wrap">
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+	<span>4</span>
+</div>
+<!--align-items-->
+<div class="align-items">
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+	<span>4</span>
+</div>
+<!--align-content-->
+<div class="align-content">
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+	<span>4</span>
+	<span>5</span>
+	<span>6</span>
+</div>
+
+<!--flex-->
+<section class="flex">
+	<div></div>
+	<div></div>
+	<div></div>
+</section>
+<div class="flex1">
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+</div>
+
+<!--align-self, order-->
+<div class="align-self-order">
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+</div>
+</body>
+</html>
