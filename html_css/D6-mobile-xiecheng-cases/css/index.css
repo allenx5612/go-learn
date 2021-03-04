@@ -1,0 +1,191 @@
+body {
+    max-width: 1080px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/*搜索栏*/
+
+.search-index {
+    display: flex;
+    position: fixed;
+    min-width: 320px;
+    max-width: 1080px;
+    width: 100%;
+    height: 44px;
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.search {
+    position: relative;
+    flex: 1;
+    height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 7px 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 24px;
+    padding-left: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.search::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url("../images/sprite.png") no-repeat -59px -279px;
+    background-size: 104px auto;
+}
+
+.user {
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+}
+
+.user::before {
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
+    margin: 4px auto -2px;
+    background: url("../images/sprite.png") no-repeat -59px -194px;
+    background-size: 104px auto;
+}
+
+/*焦点图*/
+
+.focus {
+    padding-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+/*局部导航*/
+
+.local-nav {
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 3px 4px;
+}
+
+.local-nav li {
+    flex: 1;
+}
+
+.local-nav li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 12px;
+}
+
+.local-nav-icon {
+    width: 32px;
+    height: 32px;
+    background: url("../images/localnav_bg.png") no-repeat;
+    background-size: 32px auto;
+}
+
+.local-nav .icon2 {
+    background-position-y: -32px;
+}
+
+.local-nav .icon3 {
+    background-position-y: -64px;
+}
+
+.local-nav .icon4 {
+    background-position-y: -96px;
+}
+
+.local-nav .icon5 {
+    background-position-y: -128px;
+}
+
+/*导航栏*/
+
+nav {
+    border-radius: 8px;
+    margin: 0 4px 3px;
+    overflow: hidden;
+}
+
+.nav-bd {
+    display: flex;
+    height: 88px;
+    background-color: pink;
+}
+
+.nav-bd:nth-child(2) {
+    margin: 3px 0;
+}
+
+.nav-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+.nav-items a {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+    font-size: 14px;
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav-items a:nth-child(2) {
+    border-top: 1px solid #fff;
+}
+
+.nav-items:nth-child(1) a {
+    background: url("../images/hotel.png") no-repeat bottom center;
+    background-size: 121px;
+}
