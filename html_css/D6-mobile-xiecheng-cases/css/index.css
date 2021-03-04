@@ -158,6 +158,18 @@ nav {
     background-color: pink;
 }
 
+.nav-bd:nth-child(1) {
+    background: -webkit-linear-gradient(left, #fa5a55, #fa994d);
+}
+
+.nav-bd:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4b90ed, #53bced);
+}
+
+.nav-bd:nth-child(3) {
+    background: -webkit-linear-gradient(left, #34c2a9, #6cd559);
+}
+
 .nav-bd:nth-child(2) {
     margin: 3px 0;
 }
@@ -188,4 +200,132 @@ nav {
 .nav-items:nth-child(1) a {
     background: url("../images/hotel.png") no-repeat bottom center;
     background-size: 121px;
+}
+
+/*侧导航栏*/
+
+.subnav-entry {
+    display: flex;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    flex-wrap: wrap;
+}
+
+.subnav-entry li {
+    /*flex可用百分比*/
+    flex: 20%;
+}
+
+.subnav-entry li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.subnav-entry-icon {
+    width: 28px;
+    height: 28px;
+    background: url("../images/subnav-bg.png") no-repeat;
+    background-size: 28px auto;
+}
+
+.subnav-entry .icon2 {
+    background-position: 3px -30px;
+}
+
+.subnav-entry .icon3 {
+    background-position: 2px -64px;
+}
+
+.subnav-entry .icon4 {
+    background-position: 0 -98px;
+}
+
+.subnav-entry .icon5 {
+    background-position: 0 -130px;
+}
+
+.subnav-entry .icon6 {
+    background-position: 4px -164px;
+}
+
+.subnav-entry .icon7 {
+    background-position: 0 -198px;
+}
+
+.subnav-entry .icon8 {
+    background-position: 0 -228px;
+}
+
+.subnav-entry .icon9 {
+    background-position: 0 -257px;
+}
+
+.subnav-entry .icon10 {
+    background-position: 4px -286px;
+}
+
+/*销售模块*/
+
+.sales-box {
+    border-top: 1px solid #bbb;
+    background-color: #fff;
+    margin: 4px;
+}
+
+.sales-hd {
+    display: flex;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.sales-hd h2 {
+    width: 79px;
+    height: 15px;
+    background-color: pink;
+    background: url("../images/hot.png") no-repeat 0 -20px;
+    background-size: 79px auto;
+}
+
+.more {
+    position: relative;
+    border-radius: 15px;
+    background: -webkit-linear-gradient(left, #ff509c, #ff6bc6);
+    padding: 3px 20px 3px 10px;
+    color: #fff;
+}
+
+.more::after {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.row {
+    display: flex;
+}
+
+.row a {
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.row a:nth-child(1) {
+    border-right: 1px solid #eee;
+}
+
+.row a img {
+    width: 100%;
 }
