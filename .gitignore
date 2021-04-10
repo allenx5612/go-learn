@@ -19,6 +19,7 @@ deploy/
 linux/
 log/
 
+*.css.map
 
 rcc*
 moc*

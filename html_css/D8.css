@@ -1,0 +1,26 @@
+html {
+  font-size: 50px;
+}
+body {
+  background-color: green;
+}
+div {
+  color: green;
+}
+.header {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
+.header a {
+  color: red;
+}
+.header a:hover {
+  color: yellow;
+}
+.header {
+  width: 82rem / 50px;
+  height: 82rem / 50px;
+  border: 15px solid red;
+}
+/*# sourceMappingURL=D8.css.map */

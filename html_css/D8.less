@@ -1,0 +1,40 @@
+// 定义一个变量,并使用,变量名不能以数字开头，不能包含特殊字符，区分大小写
+@base-font: 50px;
+html {
+  font-size: @base-font;
+}
+@color: green;
+body {
+  background-color: @color;
+}
+div {
+  color: @color;
+}
+
+// less嵌套
+.header {
+  width: 200px;
+  height: 200px; 
+  background-color:pink;
+  // 子元素直接写到父元素内部
+  a {
+    color: red;
+    // 如若不属于元素后代，或为伪类，交集选择器，前面要加上&符号
+    &:hover {
+      color: yellow;
+    }
+  }
+}
+
+// less运算, 运算符左右必须有空格，两数运算，如果只有一个有单位，则以有单位的为准
+// 如果两数都有单位，且不相同，结果以第一个单位为准
+@border: 5px * 3;
+.header {
+  //width: 200px + 5;
+  //height: 200px * 3;
+  //width: (200 / 50rem);
+  //height: (200 / 50rem);
+  width: 82rem / @base-font;
+  height: 82rem / @base-font;
+  border: @border solid red;
+}
