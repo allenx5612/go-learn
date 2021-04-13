@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!--以IE的最高版本渲染页面-->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]
+      在IE6,7,8需要使用媒体查询时使用
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    [endif]-->
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+		/*可通过添加类来覆盖修改bootstrap原样式*/
+		.login {
+			width: 80px;
+		}
+	</style>
+</head>
+<body>
+	<button type="button" class="btn btn-info login">登录</button>
+	<!--.container可做响应式布局，根据屏幕宽度分为不同档位,.container-fluid可做流式布局，适合移动端开发，宽度为100%-->
+	<!--bootstrap栅格系统统一将container划分为12列，
+	栅格系统列类前缀，超小屏幕，.col-xs-，小屏设备.col-sm-，中等屏幕.col-md-，宽屏设备.col-lg--->
+	<div class="container">
+		<div class="row">
+			<!--份数加起来必须为12,小会导致填不满，多会使行另起一行显示-->
+			<!--每列左右有默认的15像素的padding值，可以在嵌套时使用row
+			去掉父元素的padding值-->
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class="row">
+					<div class="col-md-6">a</div>
+					<div class="col-md-6">b</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class="row">
+					<div class="col-md-6">a</div>
+					<div class="col-md-6">b</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class="row">
+					<div class="col-md-6">a</div>
+					<div class="col-md-6">b</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class="row">
+					<div class="col-md-6">a</div>
+					<div class="col-md-6">b</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--使用.col-sm-offset-进行列偏移-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">左侧</div>
+			<div class="col-md-4 col-md-offset-4">右侧</div>
+		</div>
+		<!--居中-->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">居中</div>
+		</div>
+	</div>
+	<!--使用pull，push进行列排序-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-push-8">左侧</div>
+			<div class="col-md-8 col-md-pull-4">右侧</div>
+		</div>
+	</div>
+	<!--使用.hidden-或.visible-隐藏或显示在特定屏幕宽度下的元素，其他宽度可见-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">1</div>
+			<div class="col-md-4">2</div>
+			<div class="col-md-4 hidden-md">3</div>
+			<div class="col-md-4">4</div>
+		</div>
+	</div>
+</body>
+</html>
