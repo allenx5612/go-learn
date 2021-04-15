@@ -20,6 +20,12 @@ ul {
     margin: 0;
     padding: 0;
 }
+body {
+    background-color: #f5f5f5;
+}
+.container {
+    background-color: #fff;
+}
 
 /* header */
 header {
@@ -29,8 +35,55 @@ header {
     background-color: #429ad9;
 }
 .logo img {
-    width: 100%;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
 }
+.logo span {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+@media screen and (max-width: 991px){
+    header {
+        padding-right: 0!important;
+    }
+    .nav li {
+        float: left;
+        width: 20%;
+    }
+    article {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .nav li a {
+        font-size: 14px;
+        padding-left: 0;
+        text-align: center;
+    }
+    .container article .news ul li {
+        width: 50%;
+    }
+    .container article .news ul li:nth-child(2n) {
+        padding-left: 0;
+        padding-right: 5px;
+    }
+    .container article .news ul li:nth-child(2n+3) {
+        padding-left: 5px;
+    }
+    article .news ul li:nth-child(1) {
+        width: 100%;
+    }
+    .publish h3 {
+        font-size: 16px;
+    }
+}
+
 .nav {
     background-color: #eee;
     border-bottom: 1px solid #ccc;
@@ -60,7 +113,7 @@ header {
     float: left;
     width: 25%;
     height: 128px;
-    padding-right: 10px;
+    padding-left: 10px;
     margin-bottom: 10px;
 }
 .news ul li a {
@@ -87,6 +140,7 @@ header {
 }
 .news ul li:nth-child(1) {
     width: 50%;
+    padding-left: 0;
     height: 266px;
 }
 .news ul li:nth-child(1) p {
