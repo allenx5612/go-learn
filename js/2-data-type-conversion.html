@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script>
+		// 数据类型，若类型语言，运行时根据等号右边的值确认数据类型，数据类型是动态可变的
+		// 简单数据类型，number，boolean，string，undefined，null
+		// 1. number
+		let num = 10;
+		let PI = 3.14;
+		let num1 = 0o10; // 八进制
+		let num2 = 0xa; //十六进制
+		console.log(num1, num2)
+		// 结果infinity，-infinity代表无穷大，小，NaN，not a number非数字
+		// isNaN()判断是否为非数字
+		console.log(isNaN(12)) // 结果为false
+		// 2. string，可用单引号或双引号，推荐使用单引号
+		let str = '我是"中国"人\n你是日本人'
+		console.log(str);
+		console.log(str.length); //获取字符串长度
+		console.log('12' + '2' + 8); //字符串拼接
+		// 3. boolean
+		let flag = true; // 运算时为1
+        let flag1 = false; // 运算时为0
+        console.log(flag + 1);
+        console.log(flag1 + 1);
+        let undefine = undefined;
+        console.log(undefine + 1); // 结果为NaN，字符串的话，直接相连
+		console.log(null + 1); // 结果为1
+		// 4. typeof检测数据类型，prompt取的值为字符
+		let myNum = 10;
+		console.log(typeof myNum);
+		console.log(typeof str);
+		console.log(typeof flag);
+		console.log(undefine);
+		console.log(typeof null); // 结果为object
+		// 5.数据类型的转换
+		// A. 其他转字符串
+		myNum.toString();
+		String(myNum);
+		newStr = myNum + ''; // 使用拼接空字符串隐式转换
+		// B.转数字
+		console.log(parseInt('18'));
+		console.log(parseInt('3.14')); // 结果为3
+        console.log(parseInt('3.94')); // 结果为3
+        console.log(parseInt('120px')); // 结果为120
+        console.log(parseInt('rem120px')); // 结果为NaN
+
+		console.log(parseFloat('3.14'));
+        console.log(parseFloat('120px')); // 结果为120
+
+		console.log(Number('123'));
+		// 利用-，×，/隐式转换
+		console.log('12' - 0); //结果为12
+		// C. 转boolean
+		console.log(Boolean('')); // false
+        console.log(Boolean(0)); // false
+        console.log(Boolean(NaN)); // false
+        console.log(Boolean(null)); // false
+        console.log(Boolean(undefined)); // false
+        console.log(Boolean('小白')); // true
+        console.log(Boolean(12)); // true
+	</script>
+</head>
+<body>
+
+</body>
+</html>
