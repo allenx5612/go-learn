@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script>
+		// 流程控制
+		// 1.顺序控制
+		// 2.分支控制
+		let age = prompt('请输入你的年龄')
+		if (age >= 60) {
+            console.log('你老年了');
+		} else if (age >= 30) {
+		    console.log('你中年了');
+		} else if (age >= 18) {
+            console.log('你成年了');
+		} else {
+            console.log('你还很嫩');
+		}
+		// 三元表达式
+		let num = 10;
+		let result = num > 5 ? 'yes' : 'no';
+		// switch语句,switch里的表达式要和case里的全等匹配，即值与数据类型都匹配，不写break
+		// 则相当于go中的fallthrough效果
+		let fruit = prompt('请输入水果名');
+		switch (fruit) {
+		    case '苹果':
+		        console.log('3.5/斤');
+		        break;
+			case '榴莲':
+		        console.log(('35/斤'));
+				break;
+			default:
+				console.log('无此水果');
+		}
+		// 循环控制
+		// for循环
+		let sum = 0;
+		for (let i = 0; i <= 100; i++) {
+		    sum += i;
+		}
+		console.log(sum);
+		let str = '';
+		for (let i = 0; i < 10; i++) {
+		    for(j = i; j < 10; j++) {
+		        str += '*';
+		    }
+		    str += '\n';
+		}
+		console.log(str);
+		let formula = '';
+		for (let i = 1; i <= 9; i++) {
+		    for (let j = 1; j <= i; j++) {
+		        formula += j + 'x' + i + '=' + i * j + '\t';
+		    }
+		    formula += '\n';
+		}
+		console.log(formula);
+		// while循环
+		let n = 0;
+		while (n < 10) {
+		    console.log(n);
+			n++;
+		}
+		// do while循环，至少会执行一次循环体
+		n = 0;
+		do {
+		    console.log(n);
+		    n++;
+		} while (n < 10)
+		// continue, break语句
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

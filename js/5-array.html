@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script>
+        // 数组
+        // 两种创建方式
+        // let arr = new Array();
+        let arr1 = [1, 2, '我们', true];
+        // 获取元素
+        console.log(arr1[0]);
+        // 遍历数组
+        for (let i = 0; i < arr1.length; i++) {
+            console.log(arr1[i]);
+        }
+        // 追加修改元素
+        arr1[1] = 4;
+        arr1[4] = false;
+        console.log(arr1);
+        // 冒泡排序
+        let arr = [5, 4, 3, 2, 1];
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
