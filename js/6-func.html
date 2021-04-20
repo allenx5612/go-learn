@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script>
+		// 函数
+		function sayHi() {
+		    console.log('hello world');
+		}
+		sayHi();
+		// 函数参数，形参，实参
+		function cook(arg1, arg2) { // 形参
+		    console.log(arg1, arg2);
+		}
+		cook('yes', 'no') // 实参
+		// 形参大于实参，多余的实参会被忽略
+		cook('yes', 'no', 'oh')
+		// 形参小于实参，少的形参会为undefined
+		cook('yes')
+		function getSums(start, end) {
+		    let sum = 0;
+		    for (let i = start; i <= end; i++) {
+		        sum += i;
+		    }
+		    console.log(sum);
+		}
+		getSums(1, 100);
+		// 返回值, return除了返回值，还会终止函数
+		function addNum(num1, num2) {
+		    return num1 + num2;
+		}
+		console.log(addNum(3, 4))
+		// return 只能返回一个值，返回多个值需使用数组，如果函数没有return，则返回undefined
+		function fn(num1, num2) {
+		    return num1, num2;
+		}
+		console.log(fn(1, 2)); // 结果为2
+		// arguments的使用，是函数内置的对象，使用位数组传递所有接收的实参，伪数组有数组的
+		//length属性，也是按照索引存储，但没有真正数组的一些pop和push方法
+		function argUse() {
+		    console.log(arguments);
+			console.log(arguments.length);
+            console.log(arguments[0]);
+		}
+		argUse(1, 2, 3, 4)
+		// 函数的另一种声明方式，匿名函数
+		let fun = function () {
+		    console.log('hello');
+		}
+		fun();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

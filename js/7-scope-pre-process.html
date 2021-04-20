@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script>
+		// 作用域
+		// 全局作用域，整个script标签，或单独的js文件，全局变量
+		let num = 10;
+		console.log(num)
+		// 局部作用域，函数内部，局部变量
+		function fn() {
+		    let num = 20;
+		    console.log(num);
+		}
+		fn();
+		// 函数内部未声明直接赋值的也是全局变量
+		function fun() {
+		    num2 = 30;
+		}
+		fun();
+		console.log(num2);
+		// 全局变量关闭浏览器才会销毁，局部变量函数结束时便销毁
+		// 块级作用域,{}内的变量
+		// 作用域链，链式向上级查找，类似于就近原则
+		let num3 = 40;
+		function outerFun() {
+		    let num3 = 50;
+		    function innerFun() {
+		        console.log(num3); // num3会逐级向上级作用域访num3变量
+		    }
+		    innerFun();
+		}
+		outerFun();
+
+		// 预解析
+		// js代码运行分为两步，预解析，代码执行
+		// 预解析会把所有变量声明和函数提升到当前作用域的最前面
+		// 代码执行按照上下文顺序执行
+		// 预解析分为变量预解析和函数预解析
+		// 变量提升，就是把所有的变量声明提升到当前作用域的最前面，不提升赋值操作
+        console.log(num6); //结果为undefined
+        var num6 = 3; // let不会提升
+		// 函数提升，把函数声明提升到当前作用域的最前面，不执行函数
+		fun5(); // 可执行
+		function fun5() {
+		    console.log(11);
+		}
+		fun6(); // 会报错
+		let fun6 = function () { // 这种函数不会提升
+		    console.log(22);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

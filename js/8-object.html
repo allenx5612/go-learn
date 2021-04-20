@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script>
+		// 对象
+		// 利用字面量创建对象
+		let obj = {
+		    uname: '张三丰',
+			age: 18,
+			sex: '男',
+			sayHi: function () { // 方法跟的是匿名函数
+		        console.log('hi');
+			}
+		}
+		// 利用new创建
+		let obj1 = new Object();
+		obj1.uname = '张三';
+		obj1.sayHi = function () {
+		    console.log('hi~');
+		}
+		// 利用构造函数创建，利用函数封装对象，减少重复代码
+		function Star(uname, age, sex) { // 函数名首字母大写
+		    this.uname = uname;
+		    this.age = age;
+		    this.sex = sex;
+		    this.sing = function (lyric) {
+		        console.log(lyric);
+		    }
+		}
+		let nStart = new Star('刘德华', 19, '男');
+		console.log(nStart.uname, nStart.age, nStart.sex);
+		nStart.sing('hahah');
+		// 调用对象的属性方法
+		console.log(obj.uname);
+		console.log(obj['age']);
+		obj.sayHi();
+		// 遍历对象属性
+		for (let key in obj) {
+		    console.log(key);
+		    console.log(obj[key]);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
