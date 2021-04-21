@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script>
+		// 内置对象
+		// Math对象
+        console.log(Math.PI);
+        console.log(Math.max(1, 99, 10));
+        console.log(Math.max(10, 20, 'hello')); // NaN
+        console.log(Math.max()); // -infinity
+        console.log(Math.abs(-1));
+        console.log(Math.abs('-1')); // 1, 会隐式转换
+        console.log(Math.floor(1.234));
+        console.log(Math.floor(1.9));
+        console.log(Math.ceil(1.234));
+        console.log(Math.ceil(1.9));
+        console.log(Math.round(2.5));
+        console.log(Math.round(2.3));
+
+        console.log(Math.random())
+		// 要得到两数之间的随机整数，并且包含这两个整数
+		function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+		console.log(getRandom(1, 10));
+
+		// Date 对象
+		let date = new Date(); // 返回当前时间
+		console.log(date);
+		let date1 = new Date(2019, 10, 1); // 结果为11月，原因js月份是从0-11
+        console.log(date1);
+		let date2 = new Date('2019-10-1 8:8:8');
+        console.log(date2);
+        console.log(date2.getFullYear(), date2.getMonth(), date2.getDate());
+        console.log(date2.getDay()); // 周日为0直到周六为6
+        console.log(date2.getHours(), date2.getMinutes(), date2.getSeconds());
+        // 获取1970年1月1日至今的毫秒数的三种方法
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        let miliseconds = +new Date();
+        console.log(miliseconds);
+        console.log(Date.now()); // H5新增，需考虑兼容性
+		// 倒计时
+		function countDown(time) {
+		    let nowTime = +new Date(); // 当前时间时间戳
+		    let inputTime = +new Date(time); // 未来某个时间的时间戳
+		    let leftTime = (inputTime - nowTime) / 1000 // 返回剩余时间的秒数
+			let d = Math.floor(leftTime / 60 / 60 / 24); // 天
+			d = d < 10 ? '0' + d : d; // 一位数补0
+			let h = Math.floor(leftTime / 60 / 60 % 24); // 时
+            h = h < 10 ? '0' + h : h;
+			let m = Math.floor(leftTime / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+			let s = Math.floor(leftTime % 60);
+            s = s < 10 ? '0' + s : s;
+			return d + '天' + h + '时' + m + '分' + s + '秒';
+		}
+        console.log(countDown('2021-04-21 16:00:00'));
+
+		// 数组对象
+		let arr = new Array(2); // 空数组，长度为2
+		let arr1 = new Array(2, 3); // 创建了数组，值为[2, 3]
+        console.log(arr, arr1);
+        // 判断是否为数组
+        console.log(arr instanceof Array);
+        console.log(Array.isArray(arr)); // H5新增方法
+		// 添加删除元素
+		let arr2 = [13, 4, 77, 1, 7];
+		arr2.push(4); // 往末尾追加，返回值为新数组的长度
+		arr2.unshift(5); // 往开头添加，返回值同为长度
+		arr2.splice(2, 1) // 从索引2开始，删除1个元素,返回值为被删除项目的新数组,start
+						  // 可为负数，即从尾部开始
+        console.log(arr2);
+		// 翻转排序
+		arr2.reverse();
+		arr2.sort(); // 对双位数的排序会失效，结果[1, 13, 4, 4, 5, 7, 77]
+        console.log(arr2);
+		arr2.sort(function (a, b) { // 解决双位数失效的问题
+		    return a - b; // 升序
+			// return b - a; // 降序
+		})
+        console.log(arr2);
+		// 返回索引
+        console.log(arr2.indexOf(4)); // 只返回第一个索引号，找不到则为-1
+        console.log(arr2.lastIndexOf(4)); // 从后往前查，返回第一个找到的索引
+		// 转为字符串
+        console.log(arr2.toString());
+        console.log(arr2.join('&'));
+
+        // 字符串对象，基本包装类型可将简单数据类型包装为复杂数据类型，所以string有length属性
+		let str = 'an,dy,ab';
+        console.log(str.length);
+        console.log(str.indexOf('a', 2)); // 第二个参数可选，为查找的起始位置
+        console.log(str.charAt(2));
+        console.log(str.charCodeAt(2));
+        console.log(str[2]); // H5新增方法
+        console.log(str.concat('red'));
+        console.log(str.substr(2, 2));
+        console.log(str.replace('a', 'b')); // 只会替换第一个字符
+        console.log(str.split(','));
+        console.log(str.toUpperCase());
+	</script>
+</head>
+<body>
+
+</body>
+</html>
