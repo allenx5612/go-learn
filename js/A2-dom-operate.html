@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+		table {
+            width: 800px;
+			margin: 100px auto;
+			text-align: center;
+			border-collapse: collapse; /* 去除默认边框 */
+			font-size: 14px;
+		}
+		thead tr {
+            height: 30px;
+            background-color: skyblue;
+		}
+		tbody tr {
+            height: 30px;
+		}
+		tbody td {
+            border-bottom: 1px solid #d7d7d7;
+            font-size: 12px;
+		}
+		.bg {
+            background-color: #999;
+		}
+	</style>
+
+</head>
+<body>
+	<table>
+		<thead>
+		<tr>
+			<th>
+				<input type="checkbox" id="ck-all">
+			</th>
+			<th>代码</th>
+			<th>名称</th>
+			<th>最新公布净值</th>
+			<th>累计净值</th>
+			<th>前单位净值</th>
+			<th>净值增长率</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+				<input type="checkbox">
+			</td>
+			<td>003526</td>
+			<td>农银金穗3个月定期开放债券</td>
+			<td>1.075</td>
+			<td>1.079</td>
+			<td>1.074</td>
+			<td>+0.047%</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox">
+			</td>
+			<td>003526</td>
+			<td>农银金穗3个月定期开放债券</td>
+			<td>1.075</td>
+			<td>1.079</td>
+			<td>1.074</td>
+			<td>+0.047%</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox">
+			</td>
+			<td>003526</td>
+			<td>农银金穗3个月定期开放债券</td>
+			<td>1.075</td>
+			<td>1.079</td>
+			<td>1.074</td>
+			<td>+0.047%</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox">
+			</td>
+			<td>003526</td>
+			<td>农银金穗3个月定期开放债券</td>
+			<td>1.075</td>
+			<td>1.079</td>
+			<td>1.074</td>
+			<td>+0.047%</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox">
+			</td>
+			<td>003526</td>
+			<td>农银金穗3个月定期开放债券</td>
+			<td>1.075</td>
+			<td>1.079</td>
+			<td>1.074</td>
+			<td>+0.047%</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox">
+			</td>
+			<td>003526</td>
+			<td>农银金穗3个月定期开放债券</td>
+			<td>1.075</td>
+			<td>1.079</td>
+			<td>1.074</td>
+			<td>+0.047%</td>
+		</tr>
+		</tbody>
+	</table>
+	<script>
+		// 表格鼠标悬浮变色
+		let trs = document.querySelector('tbody').querySelectorAll('tr');
+		for (let i = 0; i < trs.length; i++) {
+		    trs[i].onmouseover = function () {
+		        this.className = 'bg';
+		    }
+            trs[i].onmouseout = function () {
+                this.className = '';
+            }
+		}
+		// 全选取消选中
+		let ckAll = document.getElementById('ck-all');
+		let cks = document.querySelector('tbody').querySelectorAll('input');
+		console.log(cks)
+		ckAll.onclick = function () {
+		    for (let i = 0; i < cks.length; i++) {
+		        cks[i].checked = this.checked;
+		    }
+		}
+		// 所有选项框选中，则全选选中
+        for (let i = 0; i < cks.length; i++) {
+            cks[i].onclick = function () {
+                let flag = true;
+                for (let i = 0; i < cks.length; i++) {
+					if (!cks[i].checked) {
+					    flag = false;
+					    break; // 只要有一个未选中，则无需判断之后的
+					}
+                }
+                ckAll.checked = flag;
+            }
+        }
+
+	</script>
+</body>
+</html>

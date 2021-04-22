@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+
+		.change-form {
+			position: relative;
+			width: 300px;
+		}
+		.change-form input {
+			width: 240px;
+		}
+		.change-form img {
+			position: absolute;
+			width: 20px;
+			top: 2px;
+			right: 12px;
+		}
+
+		.change-style div {
+			width: 200px;
+			height: 200px;
+            background-color: pink;
+		}
+
+		.register {
+            width: 600px;
+			margin: 100px auto;
+		}
+		.message {
+			display: inline-block;
+			font-size: 12px;
+			color: #999;
+			background: url("images/mess.png") no-repeat left center;
+			padding-left: 20px;
+		}
+		.wrong {
+			color: red;
+			background-image: url("images/wrong.png");
+		}
+		.right {
+			color: green;
+			background-image: url("images/right.png");
+		}
+
+		body {
+			background: url("images/1.jpg") no-repeat center top;
+		}
+		.baidu {
+			overflow: hidden; /* 清除浮动 */
+			margin: 100px auto;
+			width: 410px;
+            background-color: #fff;
+			padding-top: 3px;
+		}
+		.baidu li {
+			float: left;
+			margin: 0 1px;
+            cursor: pointer;
+		}
+		.baidu img {
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="change-form">
+		<button>按钮</button>
+		<input type="password" value="">
+		<img src="images/open.png" alt="">
+	</div>
+	<div class="change-style">
+		<div></div>
+		<button>close</button>
+	</div>
+	<div class="focus-blur">
+		<input type="text" value="手机">
+	</div>
+	<div class="register">
+		<input type="password" class="ipt">
+		<p class="message">请输入6～16位密码</p>
+	</div>
+	<div class="baidu">
+		<ul>
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+		</ul>
+	</div>
+	<script>
+		let chFmElem = document.getElementsByClassName('change-form');
+		let chFmBtn = chFmElem[0].querySelector('button');
+		let chFmIpt = chFmElem[0].querySelector('input');
+		let chFmImg = chFmElem[0].querySelector('img');
+		chFmBtn.onclick = function () {
+			chFmIpt.value = "被点击了";
+			// 禁用按钮
+			// chFmBtn.disabled = true;
+			this.disabled = true;
+		}
+		// 密码框逻辑
+		chFmImg.onclick = function () {
+		    if (chFmIpt.type === 'text') {
+				chFmIpt.type = 'password';
+			    chFmImg.src = 'images/open.png';
+		    } else {
+                chFmIpt.type = 'text';
+                chFmImg.src = 'images/close.png';
+		    }
+		}
+
+		// 样式属性操作
+		let chStyElem = document.querySelector('.change-style');
+		let chStyDiv = chStyElem.querySelector('div');
+		let chStyBtn = chStyElem.querySelector('button')
+		chStyDiv.onclick = function () {
+		    // js修改的为行内样式，权重较高
+			this.style.backgroundColor = 'purple';
+			this.style.width = '250px';
+		}
+		chStyBtn.onclick = function () {
+		    if (this.textContent === 'close') {
+                chStyDiv.style.display = 'none';
+                this.textContent = 'show';
+		    } else {
+                chStyDiv.style.display = 'block';
+                this.textContent = 'close';
+
+		    }
+		}
+
+		// 获取失去焦点事件
+        let fcsBlurElem = document.querySelector('.focus-blur');
+		let fcsBlurBtn = fcsBlurElem.querySelector('input');
+		fcsBlurBtn.onfocus = function () {
+		    if (this.value === '手机') {
+		        this.value = '';
+		    }
+		    this.style.color = '#333';
+		}
+		fcsBlurBtn.onblur = function () {
+		    if (this.value === '') {
+		        this.value = '手机';
+		    }
+		}
+
+		// 修改类名修改样式
+		let regiInput = document.querySelector('.ipt');
+		let regiMessage = document.querySelector('.message');
+		regiInput.onblur = function () {
+		    if (this.value.length < 6 || this.value.length > 16) {
+                regiMessage.className = 'message wrong';
+			    regiMessage.innerHTML = '您输入的位数不对要求6～16位';
+		    } else {
+		        regiMessage.className = 'message right';
+		        regiMessage.innerHTML = '密码格式正确';
+		    }
+		}
+		// 多个相同目标需要绑定相同事件，可通过循环改变
+		// 换肤效果
+		let imgs = document.querySelector('.baidu').querySelectorAll('img');
+		for (let i = 0; i < imgs.length; i++) {
+			imgs[i].onclick = function () {
+			    document.body.style.backgroundImage = 'url(' + this.src + ')'
+			}
+		}
+	</script>
+</body>
+</html>

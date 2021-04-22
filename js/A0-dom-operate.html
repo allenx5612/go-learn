@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+		#change-attr img {
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">2019-9-9</div>
+	<ul>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+	</ul>
+	<div class="box">box</div>
+	<div class="box">box</div>
+	<button id="btn">点我</button>
+	<button id="btn-time">显示时间</button>
+	<div class="show-time">123</div>
+	<div id="change-attr">
+		<button class="zxy">张学友</button>
+		<button class="ldh">刘德华</button>
+		<img src="images/ldh.jpg" alt="">
+	</div>
+	<script>
+		// DOM简介
+		// 文档从上往下加载，script要在之后，有其他方案避免
+		let timer = document.getElementById('time');
+        console.log(timer);
+        // dir可以遍历打印属性和方法
+		// console.dir(timer);
+
+		// 以伪数组的方式村组，页面没有元素也返回空伪数组
+		let lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+        // H5新增方法
+		let boxes = document.getElementsByClassName('box');
+        console.log(boxes);
+
+		let firstBox = document.querySelector('.box');
+        console.log(firstBox);
+        let allBox = document.querySelectorAll('.box');
+        console.log(allBox);
+
+		// 获取body
+        console.log(document.body);
+		// 获取html
+        console.log(document.documentElement);
+
+		// 事件
+		// 事件分为三部分，事件源，事件类型和事件处理程序
+		let btn =  document.getElementById('btn');
+		btn.onclick = function () {
+		    alert('我被点了');
+		}
+
+		// 操作DOM
+		let btnTime = document.getElementById('btn-time');
+		btnTime.onclick = function () {
+		    let div = document.querySelector('.show-time');
+		    // innerHtml 可识别html标签
+			div.textContent = getDate();
+		}
+        function getDate() {
+            let date = new Date();
+	        let year = date.getFullYear();
+	        let month  = date.getMonth();
+	        month = month < 10 ? '0' + month : month;
+	        let dates = date.getDate(); 
+	        dates = dates < 10 ? '0' + dates : dates;
+            return year + '年' + month + '月' + dates + '日';
+        }
+        // 操作元素属性
+		let chAttrElem = document.getElementById('change-attr');
+		let chBtnLdh = chAttrElem.querySelector('.ldh');
+		let chBtnZxy = chAttrElem.querySelector('.zxy');
+		let chImg = chAttrElem.querySelector('img');
+		chBtnLdh.onclick = function () {
+		    chImg.src = 'images/ldh.jpg';
+			chImg.title = '刘德华';
+		}
+		chBtnZxy.onclick = function () {
+            chImg.src = 'images/zxy.jpg';
+			chImg.title = '张学友';
+		}
+	</script>
+</body>
+</html>
