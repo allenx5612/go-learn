@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			padding: 100px;
+		}
+		.comment textarea {
+            width: 200px;
+            height: 100px;
+			border: 1px solid pink;
+			outline: none;
+			resize: none;
+		}
+		.comment ul {
+			margin-top: 50px;
+		}
+		.comment ul li {
+			list-style: none;
+            width: 300px;
+			padding: 5px;
+            background-color: rgb(245, 209, 243);
+			color: red;
+			font-size: 14px;
+			margin: 15px 0;
+		}
+	</style>
+</head>
+<body>
+	<ul class="create-elem">
+		<li>123</li>
+	</ul>
+	<div class="rm-node">
+		<button>删除</button>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</div>
+	<div class="comment">
+		<textarea name="comment-box" id="comment-box"></textarea>
+		<button>发布</button>
+		<ul>
+		</ul>
+	</div>
+	<script>
+		// 创建节点
+		let li = document.createElement('li'); // 创建的元素不能反复插入或追加
+		let ul = document.querySelector('.create-elem');
+		// 往后追加
+		ul.appendChild(li);
+		// 指定元素插入
+		let li1 = document.createElement('li');
+		ul.insertBefore(li1, ul.children[0]);
+		// 删除节点
+		let rmNode = document.querySelector('.rm-node');
+		let rmBtn = rmNode.querySelector('button');
+		let rmUl = rmNode.querySelector('ul');
+		rmBtn.onclick = function () {
+		    rmUl.removeChild(rmUl.children[0])
+            if (rmUl.children.length === 0) {
+                rmBtn.disabled = true;
+            }
+		}
+
+		// 简单发布留言
+		let comment = document.querySelector('.comment');
+		let txtArea = comment.querySelector('textarea');
+		let cmtBtn = comment.querySelector('button');
+		let cmtUl = comment.querySelector('ul');
+		cmtBtn.onclick = function () {
+		    if (txtArea.value === '') {
+		        alert('请输入内容');
+		        return false;
+		    } else {
+                let li = document.createElement('li');
+                li.innerHTML = txtArea.value;
+                cmtUl.insertBefore(li, cmtUl.children[0]);
+		    }
+		}
+	</script>
+</body>
+</html>

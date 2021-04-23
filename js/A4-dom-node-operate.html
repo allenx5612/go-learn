@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+			font-size: 14px;
+		}
+
+		.nav {
+			position: relative;
+			margin: 100px;
+		}
+		.nav>ul>li>ul {
+			display: none;
+		}
+		.nav>ul>li {
+			position: relative;
+			float: left;
+            width: 80px;
+            height: 41px;
+			text-align: center;
+		}
+		.nav li a {
+			display: block;
+            width: 100%;
+            height: 100%;
+			line-height: 41px;
+			color: #333;
+		}
+		.nav ul {
+            position: absolute;
+			top: 41px;
+			left: 0;
+			width: 100%;
+			border-left: 1px solid #fecc5b;
+			border-right: 1px solid #fecc5b;
+		}
+		.nav ul li {
+			border-bottom: 1px solid #fecc5b;
+		}
+		.nav ul li a:hover {
+            background-color: #fff5da;
+		}
+        .nav>ul>li>a:hover {
+            background-color: #eee;
+        }
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<div class="box">
+			<div class="qr-code"></div>
+		</div>
+	</div>
+	<div class="child-nodes">
+		<ul>
+			<li>
+				<p></p>
+			</li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="sibling">
+		<div></div>
+		<span></span>
+	</div>
+
+	<div class="nav">
+		<ul>
+			<li>
+				<a href="#">微博</a>
+				<ul>
+					<li><a href="#">私信</a></li>
+					<li><a href="#">评论</a></li>
+					<li><a href="#">@我</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">博客</a>
+				<ul>
+					<li><a href="#">私信</a></li>
+					<li><a href="#">评论</a></li>
+					<li><a href="#">@我</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">邮箱</a>
+				<ul>
+					<li><a href="#">私信</a></li>
+					<li><a href="#">评论</a></li>
+					<li><a href="#">@我</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">网站导航</a>
+				<ul>
+					<li><a href="#">私信</a></li>
+					<li><a href="#">评论</a></li>
+					<li><a href="#">@我</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script>
+		// 节点操作，节点包括nodeName，nodeType，nodeValue三个属性，
+		// 元素节点nodeType为1,属性节点nodeType为2,文本节点nodeType为3,
+		// 文本节点包含文字，空格，换行等
+		// 父节点
+		let qrCode = document.querySelector('.qr-code');
+		// 只能获取离元素最近的父级节点，找不到则为null
+        console.log(qrCode.parentNode); // 为box节点
+		// 子节点，同上只获取下一级的子节点
+		let ul = document.querySelector('.child-nodes').firstElementChild;
+		// childNodes会获取所有子节点，包括元素节点和文本节点
+        console.log(ul.childNodes);
+		// children只会获取ul下的元素子节点
+        console.log(ul.children);
+		// child和elementChild同理，elementChild有兼容性问题，IE9以上
+        console.log(ul.firstChild);
+        console.log(ul.lastChild);
+        console.log(ul.firstElementChild);
+        console.log(ul.lastElementChild);
+		// 更常用
+        console.log(ul.children[0]);
+        console.log(ul.children[ul.children.length - 1]);
+        // 兄弟节点
+		let div = document.querySelector('.sibling').children[0];
+		let span = document.querySelector('.sibling').children[1];
+		// 同上，包含元素节点和文本节点
+        console.log(div.nextSibling);
+        console.log(span.previousSibling);
+        // 同上，有兼容性问题，IE9以上
+        console.log(div.nextElementSibling);
+        console.log(span.previousElementSibling);
+
+		// 下拉菜单
+		let lis = document.querySelector('.nav').children[0].children;
+        console.log(lis)
+		for (let i = 0; i < lis.length; i++) {
+		    lis[i].onmouseover = function () {
+		        this.children[1].style.display = 'block';
+		    }
+            lis[i].onmouseout = function () {
+                this.children[1].removeAttribute('style');
+            }
+		}
+	</script>
+</body>
+</html>
