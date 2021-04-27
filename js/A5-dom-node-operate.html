@@ -33,6 +33,11 @@
 			font-size: 14px;
 			margin: 15px 0;
 		}
+		.comment li a {
+            float: right;
+			color: #333;
+			text-decoration: none;
+		}
 	</style>
 </head>
 <body>
@@ -72,6 +77,13 @@
                 rmBtn.disabled = true;
             }
 		}
+		// 复制节点，不带参数为浅拷贝，只会复制标签，不会复制内容，参数为true则深拷贝
+		let cloneLi = ul.children[1].cloneNode(true)
+		ul.appendChild(cloneLi)
+
+		// document.write()会导致页面重绘，使得以前所有的内容都被覆盖掉
+		// innerHtml通过字符串拼接创建元素效率远低于createElement
+		// 但innerHtml使用数组拼接，效率要高于createElement
 
 		// 简单发布留言
 		let comment = document.querySelector('.comment');
@@ -84,8 +96,17 @@
 		        return false;
 		    } else {
                 let li = document.createElement('li');
-                li.innerHTML = txtArea.value;
+                // 将href设为javascript:; 或 javascript:void(0);可阻止url跳转(在末尾加#)
+                li.innerHTML = txtArea.value + '<a href="javascript:;">删除</a>';
                 cmtUl.insertBefore(li, cmtUl.children[0]);
+                txtArea.value = '';
+				// 删除事件绑定
+                let anchors = comment.querySelectorAll('a');
+                for (let i = 0; i <= anchors.length; i++) {
+                    anchors[i].onclick = function() {
+	                    cmtUl.removeChild(this.parentNode);
+                    }
+                }
 		    }
 		}
 	</script>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		table {
+            width: 500px;
+			margin: 100px auto;
+			border-collapse: collapse;
+			text-align: center;
+		}
+		td, th {
+			border: 1px solid #333;
+		}
+		thead tr {
+            height: 40px;
+            background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>科目</th>
+				<th>成绩</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
+	<script>
+		// 动态生成的数据
+		let data = [
+			{
+			    name: '魏璎珞',
+				subject: 'JavaScript',
+				score: 100
+			},
+            {
+                name: '红利',
+                subject: 'JavaScript',
+                score: 98
+            },
+            {
+                name: '富恒',
+                subject: 'JavaScript',
+                score: 99
+            },
+            {
+                name: '明玉',
+                subject: 'JavaScript',
+                score: 88
+            },
+		]
+		// 动态生成表格
+		let tableBody = document.querySelector('tbody');
+		for (let i = 0; i < data.length; i++) {
+		    let obj = data[i];
+		    let tr = document.createElement('tr');
+			tableBody.appendChild(tr);
+			for (let key in obj) {
+				let td = document.createElement('td');
+				td.innerHTML = obj[key];
+				tr.appendChild(td);
+			}
+			// 添加删除键
+			let tdRemove = document.createElement('td');
+			tdRemove.innerHTML = '<a href="javascript:;">删除</a>';
+			tr.appendChild(tdRemove);
+		}
+        // 绑定删除事件
+        let aRemove = tableBody.querySelectorAll('a');
+        for (let i = 0; i < aRemove.length; i++) {
+            aRemove[i].onclick = function () {
+                console.log(this.parentNode)
+                tableBody.removeChild(this.parentNode.parentNode);
+            }
+        }
+	</script>
+</body>
+</html>

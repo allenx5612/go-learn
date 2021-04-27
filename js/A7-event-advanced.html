@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style type="text/css">
+		.event-drop div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="event-register">
+		<button>传统注册事件</button>
+		<button>方法监听事件</button>
+		<button>attachEvent</button>
+	</div>
+	<div class="event-drop">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+	<script>
+		// 1. 事件注册
+		// 传统事件注册，单个元素只能注册一个事件，重复注册会被新事件覆盖
+		let regiButton = document.querySelector('.event-register').querySelectorAll('button');
+		regiButton[0].onclick = function () {
+		    alert('hi');
+		}
+		regiButton[0].onclick = function () {
+		    alert('yes');
+		}
+		// 方法监听注册事件，可给同个元素注册多个事件
+		// addEventListener(type, listener, useCapture)，IE9+
+		// type，时间类型字符串，如click，mouseover
+		// listener，事件处理函数
+		// useCapture，可选，bool
+		regiButton[1].addEventListener('click', function () {
+		    alert('22');
+		})
+        regiButton[1].addEventListener('click', function () {
+            alert('33');
+        })
+		// attachEvent，只支持IE9以下
+		// regiButton.attachEvent('onclick', function () {
+		//     alert('11')
+		// })
+
+		// 2.删除事件
+		// 传统方式，onclick = null
+		// 实现点击一次不再点击的效果
+		let dropDiv = document.querySelector('.event-drop').querySelectorAll('div');
+		dropDiv[0].onclick = function () {
+		    alert('11');
+		    dropDiv[0].onclick = null;
+		}
+		// 监听删除
+		dropDiv[1].addEventListener('click', fn);
+		function fn() {
+		    alert('33');
+			dropDiv[1].removeEventListener('click', fn);
+		};
+		// attachEvent删除
+		// dropDiv[3].attachEvent('onclick', fn1);
+        // function fn1() {
+        //     alert('33');
+        //     dropDiv[1].detachEvent('onclick', fn1);
+        // };
+	</script>
+</body>
+</html>
